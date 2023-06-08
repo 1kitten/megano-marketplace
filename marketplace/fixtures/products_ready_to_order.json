@@ -1,0 +1,3728 @@
+[
+{
+    "model": "admin_interface.theme",
+    "pk": 1,
+    "fields": {
+        "name": "Django",
+        "active": false,
+        "title": "Django administration",
+        "title_color": "#F5DD5D",
+        "title_visible": true,
+        "logo": "",
+        "logo_color": "#FFFFFF",
+        "logo_max_width": 400,
+        "logo_max_height": 100,
+        "logo_visible": true,
+        "favicon": "",
+        "env_name": "",
+        "env_color": "#E74C3C",
+        "env_visible_in_header": true,
+        "env_visible_in_favicon": true,
+        "language_chooser_active": true,
+        "language_chooser_control": "default-select",
+        "language_chooser_display": "code",
+        "css_header_background_color": "#0C4B33",
+        "css_header_text_color": "#44B78B",
+        "css_header_link_color": "#FFFFFF",
+        "css_header_link_hover_color": "#C9F0DD",
+        "css_module_background_color": "#44B78B",
+        "css_module_background_selected_color": "#FFFFCC",
+        "css_module_text_color": "#FFFFFF",
+        "css_module_link_color": "#FFFFFF",
+        "css_module_link_selected_color": "#FFFFFF",
+        "css_module_link_hover_color": "#C9F0DD",
+        "css_module_rounded_corners": true,
+        "css_generic_link_color": "#0C3C26",
+        "css_generic_link_hover_color": "#156641",
+        "css_generic_link_active_color": "#29B864",
+        "css_save_button_background_color": "#0C4B33",
+        "css_save_button_background_hover_color": "#0C3C26",
+        "css_save_button_text_color": "#FFFFFF",
+        "css_delete_button_background_color": "#BA2121",
+        "css_delete_button_background_hover_color": "#A41515",
+        "css_delete_button_text_color": "#FFFFFF",
+        "related_modal_active": true,
+        "related_modal_background_color": "#000000",
+        "related_modal_background_opacity": "0.3",
+        "related_modal_rounded_corners": true,
+        "related_modal_close_button_visible": true,
+        "list_filter_highlight": true,
+        "list_filter_dropdown": true,
+        "list_filter_sticky": true,
+        "list_filter_removal_links": false,
+        "foldable_apps": true,
+        "show_fieldsets_as_tabs": false,
+        "show_inlines_as_tabs": false,
+        "collapsible_stacked_inlines": false,
+        "collapsible_stacked_inlines_collapsed": true,
+        "collapsible_tabular_inlines": false,
+        "collapsible_tabular_inlines_collapsed": true,
+        "recent_actions_visible": true,
+        "form_submit_sticky": false,
+        "form_pagination_sticky": false
+    }
+},
+{
+    "model": "admin_interface.theme",
+    "pk": 2,
+    "fields": {
+        "name": "MEGANO",
+        "active": true,
+        "title": "ADMIN PANEL",
+        "title_color": "#0063D1",
+        "title_visible": true,
+        "logo": "/static/assets/img/logo_footer.png",
+        "logo_color": "#FFFFFF",
+        "logo_max_width": 400,
+        "logo_max_height": 100,
+        "logo_visible": true,
+        "favicon": "/static/assets/img/favicon.ico",
+        "env_name": "",
+        "env_color": "#E74C3C",
+        "env_visible_in_header": true,
+        "env_visible_in_favicon": true,
+        "language_chooser_active": true,
+        "language_chooser_control": "default-select",
+        "language_chooser_display": "code",
+        "css_header_background_color": "#1F2126",
+        "css_header_text_color": "#FFFFFF",
+        "css_header_link_color": "#0063D1",
+        "css_header_link_hover_color": "#6D98B8",
+        "css_module_background_color": "#1F2126",
+        "css_module_background_selected_color": "#424650",
+        "css_module_text_color": "#FFFFFF",
+        "css_module_link_color": "#FFFFFF",
+        "css_module_link_selected_color": "#D13B3B",
+        "css_module_link_hover_color": "#6D98B8",
+        "css_module_rounded_corners": true,
+        "css_generic_link_color": "#0063D1",
+        "css_generic_link_hover_color": "#0029D1",
+        "css_generic_link_active_color": "#6D98B8",
+        "css_save_button_background_color": "#0063D1",
+        "css_save_button_background_hover_color": "#0029D1",
+        "css_save_button_text_color": "#FFFFFF",
+        "css_delete_button_background_color": "#BA2121",
+        "css_delete_button_background_hover_color": "#A41515",
+        "css_delete_button_text_color": "#FFFFFF",
+        "related_modal_active": true,
+        "related_modal_background_color": "#000000",
+        "related_modal_background_opacity": "0.3",
+        "related_modal_rounded_corners": true,
+        "related_modal_close_button_visible": true,
+        "list_filter_highlight": true,
+        "list_filter_dropdown": true,
+        "list_filter_sticky": true,
+        "list_filter_removal_links": false,
+        "foldable_apps": true,
+        "show_fieldsets_as_tabs": false,
+        "show_inlines_as_tabs": false,
+        "collapsible_stacked_inlines": false,
+        "collapsible_stacked_inlines_collapsed": true,
+        "collapsible_tabular_inlines": false,
+        "collapsible_tabular_inlines_collapsed": true,
+        "recent_actions_visible": true,
+        "form_submit_sticky": false,
+        "form_pagination_sticky": false
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2023-06-04T10:40:04.720Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "1. leopold",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2023-06-04T10:40:28.151Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Leopold FC660M BT",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2023-06-04T10:41:04.257Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "2. vortex",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2023-06-04T10:41:09.807Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Vortex Tab",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2023-06-04T10:42:10.760Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "3. xtrfy_1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2023-06-04T10:42:20.356Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Xtrfy M4 RGB",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2023-06-04T10:42:54.230Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "4. logitech",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2023-06-04T10:42:58.696Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Logitech G Pro X Superlight",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2023-06-04T10:44:28.037Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "5",
+        "object_repr": "5. mousepad",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2023-06-04T10:44:32.775Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Коврик Varmilo Chang'e",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2023-06-04T10:47:29.756Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Клавиатуры",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2023-06-04T10:48:23.688Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Fun",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2023-06-04T10:48:27.574Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "Esports",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2023-06-04T10:48:34.589Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "Gadget",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2023-06-04T10:48:40.907Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "1",
+        "object_repr": "Leopold FC660M BT Light Pink",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2023-06-04T10:49:07.588Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Vortex",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2023-06-04T10:49:21.676Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "2",
+        "object_repr": "Vortex Tab 90",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2023-06-04T10:49:48.676Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "Мышки",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2023-06-04T10:50:03.429Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "Xtrfy",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2023-06-04T10:50:18.044Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "3",
+        "object_repr": "Xtrfy M4 RGB Черная",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2023-06-04T10:50:53.758Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "5",
+        "object_repr": "Logitech",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2023-06-04T10:51:03.705Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "4",
+        "object_repr": "Logitech G Pro X Superlight Wireless",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2023-06-04T10:51:28.669Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "Коврики для мыши",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2023-06-04T10:51:39.135Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "5",
+        "object_repr": "Коврик Varmilo Chang'e the Moon",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2023-06-04T10:51:54.041Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "7",
+        "object_repr": "Leopold",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2023-06-04T10:51:56.643Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "1",
+        "object_repr": "Leopold FC660M BT Light Pink",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2023-06-04T10:53:06.815Z",
+        "user": 1,
+        "content_type": 21,
+        "object_id": "1",
+        "object_repr": "Maksim Strelchenko",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2023-06-04T10:53:31.450Z",
+        "user": 1,
+        "content_type": 22,
+        "object_id": "1",
+        "object_repr": "DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2023-06-04T10:53:57.266Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "1",
+        "object_repr": "Leopold FC660M BT Light Pink from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2023-06-04T10:54:10.034Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "2",
+        "object_repr": "Vortex Tab 90 from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2023-06-04T10:54:31.072Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "3",
+        "object_repr": "Logitech G Pro X Superlight Wireless from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2023-06-04T10:57:25.579Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "4",
+        "object_repr": "Xtrfy M4 RGB Черная from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2023-06-04T10:57:39.258Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "5",
+        "object_repr": "Коврик Varmilo Chang'e the Moon from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2023-06-04T10:59:17.763Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Коврик Varmilo Chang'e",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2023-06-04T10:59:23.816Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Leopold FC660M BT",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2023-06-04T10:59:27.193Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Vortex Tab",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2023-06-04T10:59:30.501Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Xtrfy M4 RGB",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2023-06-04T10:59:33.655Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Logitech G Pro X Superlight",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2023-06-04T11:00:22.207Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "8",
+        "object_repr": "Ножки",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2023-06-04T11:00:42.295Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "6",
+        "object_repr": "6. zowie_glides",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2023-06-04T11:01:10.768Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "6",
+        "object_repr": "Стеклянные ножки Superglide для мыши — Zowie EC series",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2023-06-04T11:02:07.034Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "9",
+        "object_repr": "Клавиши",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2023-06-04T11:02:17.089Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "7",
+        "object_repr": "7. кошка",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2023-06-04T11:02:31.853Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "8",
+        "object_repr": "8. кошка2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2023-06-04T11:02:39.726Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "7",
+        "object_repr": "Клавиша ZOMO «Американская короткошёрстная»",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2023-06-04T11:03:32.718Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "9",
+        "object_repr": "9. чоппер",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2023-06-04T11:03:42.752Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "8",
+        "object_repr": "Клавиша ZOMO «Chopper's hat»",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2023-06-04T11:04:37.731Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "10",
+        "object_repr": "10. зомо",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2023-06-04T11:04:46.914Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "9",
+        "object_repr": "Клавиша ZOMO «Butterfly»",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2023-06-04T11:05:07.377Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "6",
+        "object_repr": "Стеклянные ножки Superglide для мыши — Zowie EC series from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2023-06-04T11:05:20.530Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "7",
+        "object_repr": "Клавиша ZOMO «Американская короткошёрстная» from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2023-06-04T11:05:34.553Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "8",
+        "object_repr": "Клавиша ZOMO «Chopper's hat» from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2023-06-04T11:06:07.256Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "9",
+        "object_repr": "Клавиша ZOMO «Butterfly» from DNS",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2023-06-04T11:08:11.360Z",
+        "user": 1,
+        "content_type": 25,
+        "object_id": "1",
+        "object_repr": "Обычная доставка",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2023-06-04T11:08:19.872Z",
+        "user": 1,
+        "content_type": 25,
+        "object_id": "2",
+        "object_repr": "Экспресс доставка",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2023-06-04T11:08:24.198Z",
+        "user": 1,
+        "content_type": 25,
+        "object_id": "1",
+        "object_repr": "Обычная доставка",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0426\\u0435\\u043d\\u0430\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2023-06-04T11:09:31.006Z",
+        "user": 1,
+        "content_type": 29,
+        "object_id": "1",
+        "object_repr": "Онлайн картой",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2023-06-04T11:09:41.431Z",
+        "user": 1,
+        "content_type": 29,
+        "object_id": "2",
+        "object_repr": "Онлайн картой со случайного счёта",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2023-06-04T11:09:58.411Z",
+        "user": 1,
+        "content_type": 29,
+        "object_id": "3",
+        "object_repr": "Долями",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add Theme",
+        "content_type": 1,
+        "codename": "add_theme"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change Theme",
+        "content_type": 1,
+        "codename": "change_theme"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete Theme",
+        "content_type": 1,
+        "codename": "delete_theme"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view Theme",
+        "content_type": 1,
+        "codename": "view_theme"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 2,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 2,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 2,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 2,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 3,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 3,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 3,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 3,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 4,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 4,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 4,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 4,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 5,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 5,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 5,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 5,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 6,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 6,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 6,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 6,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 7,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 7,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 7,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 7,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add Картинка",
+        "content_type": 8,
+        "codename": "add_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change Картинка",
+        "content_type": 8,
+        "codename": "change_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete Картинка",
+        "content_type": 8,
+        "codename": "delete_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view Картинка",
+        "content_type": 8,
+        "codename": "view_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add Категория",
+        "content_type": 9,
+        "codename": "add_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change Категория",
+        "content_type": 9,
+        "codename": "change_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete Категория",
+        "content_type": 9,
+        "codename": "delete_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view Категория",
+        "content_type": 9,
+        "codename": "view_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add Баннер",
+        "content_type": 10,
+        "codename": "add_banner"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change Баннер",
+        "content_type": 10,
+        "codename": "change_banner"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete Баннер",
+        "content_type": 10,
+        "codename": "delete_banner"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view Баннер",
+        "content_type": 10,
+        "codename": "view_banner"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add Скидка",
+        "content_type": 11,
+        "codename": "add_discount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change Скидка",
+        "content_type": 11,
+        "codename": "change_discount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete Скидка",
+        "content_type": 11,
+        "codename": "delete_discount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view Скидка",
+        "content_type": 11,
+        "codename": "view_discount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add Тэг",
+        "content_type": 12,
+        "codename": "add_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change Тэг",
+        "content_type": 12,
+        "codename": "change_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete Тэг",
+        "content_type": 12,
+        "codename": "delete_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view Тэг",
+        "content_type": 12,
+        "codename": "view_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add Продукт",
+        "content_type": 13,
+        "codename": "add_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change Продукт",
+        "content_type": 13,
+        "codename": "change_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete Продукт",
+        "content_type": 13,
+        "codename": "delete_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view Продукт",
+        "content_type": 13,
+        "codename": "view_product"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add Предложение",
+        "content_type": 14,
+        "codename": "add_offer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change Предложение",
+        "content_type": 14,
+        "codename": "change_offer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete Предложение",
+        "content_type": 14,
+        "codename": "delete_offer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view Предложение",
+        "content_type": 14,
+        "codename": "view_offer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add Отзыв",
+        "content_type": 15,
+        "codename": "add_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change Отзыв",
+        "content_type": 15,
+        "codename": "change_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete Отзыв",
+        "content_type": 15,
+        "codename": "delete_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view Отзыв",
+        "content_type": 15,
+        "codename": "view_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add Набор товаров",
+        "content_type": 16,
+        "codename": "add_setofproducts"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change Набор товаров",
+        "content_type": 16,
+        "codename": "change_setofproducts"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete Набор товаров",
+        "content_type": 16,
+        "codename": "delete_setofproducts"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view Набор товаров",
+        "content_type": 16,
+        "codename": "view_setofproducts"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add Группа товаров",
+        "content_type": 17,
+        "codename": "add_productgroup"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change Группа товаров",
+        "content_type": 17,
+        "codename": "change_productgroup"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete Группа товаров",
+        "content_type": 17,
+        "codename": "delete_productgroup"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view Группа товаров",
+        "content_type": 17,
+        "codename": "view_productgroup"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+        "name": "Can add Скидка на набор",
+        "content_type": 18,
+        "codename": "add_setdiscount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+        "name": "Can change Скидка на набор",
+        "content_type": 18,
+        "codename": "change_setdiscount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+        "name": "Can delete Скидка на набор",
+        "content_type": 18,
+        "codename": "delete_setdiscount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+        "name": "Can view Скидка на набор",
+        "content_type": 18,
+        "codename": "view_setdiscount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+        "name": "Can add Скидка на корзину",
+        "content_type": 19,
+        "codename": "add_cartdiscount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+        "name": "Can change Скидка на корзину",
+        "content_type": 19,
+        "codename": "change_cartdiscount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+        "name": "Can delete Скидка на корзину",
+        "content_type": 19,
+        "codename": "delete_cartdiscount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+        "name": "Can view Скидка на корзину",
+        "content_type": 19,
+        "codename": "view_cartdiscount"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+        "name": "Can add watched product",
+        "content_type": 20,
+        "codename": "add_watchedproduct"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+        "name": "Can change watched product",
+        "content_type": 20,
+        "codename": "change_watchedproduct"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+        "name": "Can delete watched product",
+        "content_type": 20,
+        "codename": "delete_watchedproduct"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+        "name": "Can view watched product",
+        "content_type": 20,
+        "codename": "view_watchedproduct"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+        "name": "Can add Профиль",
+        "content_type": 21,
+        "codename": "add_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+        "name": "Can change Профиль",
+        "content_type": 21,
+        "codename": "change_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+        "name": "Can delete Профиль",
+        "content_type": 21,
+        "codename": "delete_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+        "name": "Can view Профиль",
+        "content_type": 21,
+        "codename": "view_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+        "name": "Can add Продавец",
+        "content_type": 22,
+        "codename": "add_seller"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+        "name": "Can change Продавец",
+        "content_type": 22,
+        "codename": "change_seller"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+        "name": "Can delete Продавец",
+        "content_type": 22,
+        "codename": "delete_seller"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+        "name": "Can view Продавец",
+        "content_type": 22,
+        "codename": "view_seller"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+        "name": "Can add Покупатель",
+        "content_type": 23,
+        "codename": "add_buyer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+        "name": "Can change Покупатель",
+        "content_type": 23,
+        "codename": "change_buyer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+        "name": "Can delete Покупатель",
+        "content_type": 23,
+        "codename": "delete_buyer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+        "name": "Can view Покупатель",
+        "content_type": 23,
+        "codename": "view_buyer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+        "name": "Can add Список сравнения",
+        "content_type": 24,
+        "codename": "add_comparisonlist"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+        "name": "Can change Список сравнения",
+        "content_type": 24,
+        "codename": "change_comparisonlist"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+        "name": "Can delete Список сравнения",
+        "content_type": 24,
+        "codename": "delete_comparisonlist"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 96,
+    "fields": {
+        "name": "Can view Список сравнения",
+        "content_type": 24,
+        "codename": "view_comparisonlist"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 97,
+    "fields": {
+        "name": "Can add Тип доставки",
+        "content_type": 25,
+        "codename": "add_deliverytype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 98,
+    "fields": {
+        "name": "Can change Тип доставки",
+        "content_type": 25,
+        "codename": "change_deliverytype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 99,
+    "fields": {
+        "name": "Can delete Тип доставки",
+        "content_type": 25,
+        "codename": "delete_deliverytype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 100,
+    "fields": {
+        "name": "Can view Тип доставки",
+        "content_type": 25,
+        "codename": "view_deliverytype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 101,
+    "fields": {
+        "name": "Can add Заказ",
+        "content_type": 26,
+        "codename": "add_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 102,
+    "fields": {
+        "name": "Can change Заказ",
+        "content_type": 26,
+        "codename": "change_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 103,
+    "fields": {
+        "name": "Can delete Заказ",
+        "content_type": 26,
+        "codename": "delete_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 104,
+    "fields": {
+        "name": "Can view Заказ",
+        "content_type": 26,
+        "codename": "view_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 105,
+    "fields": {
+        "name": "Can add Тип оплаты",
+        "content_type": 27,
+        "codename": "add_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 106,
+    "fields": {
+        "name": "Can change Тип оплаты",
+        "content_type": 27,
+        "codename": "change_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 107,
+    "fields": {
+        "name": "Can delete Тип оплаты",
+        "content_type": 27,
+        "codename": "delete_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 108,
+    "fields": {
+        "name": "Can view Тип оплаты",
+        "content_type": 27,
+        "codename": "view_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 109,
+    "fields": {
+        "name": "Can add Товар в заказе",
+        "content_type": 28,
+        "codename": "add_orderitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 110,
+    "fields": {
+        "name": "Can change Товар в заказе",
+        "content_type": 28,
+        "codename": "change_orderitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 111,
+    "fields": {
+        "name": "Can delete Товар в заказе",
+        "content_type": 28,
+        "codename": "delete_orderitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 112,
+    "fields": {
+        "name": "Can view Товар в заказе",
+        "content_type": 28,
+        "codename": "view_orderitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 113,
+    "fields": {
+        "name": "Can add вид оплаты",
+        "content_type": 29,
+        "codename": "add_paymenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 114,
+    "fields": {
+        "name": "Can change вид оплаты",
+        "content_type": 29,
+        "codename": "change_paymenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 115,
+    "fields": {
+        "name": "Can delete вид оплаты",
+        "content_type": 29,
+        "codename": "delete_paymenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 116,
+    "fields": {
+        "name": "Can view вид оплаты",
+        "content_type": 29,
+        "codename": "view_paymenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 117,
+    "fields": {
+        "name": "Can add Корзина",
+        "content_type": 30,
+        "codename": "add_cart"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 118,
+    "fields": {
+        "name": "Can change Корзина",
+        "content_type": 30,
+        "codename": "change_cart"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 119,
+    "fields": {
+        "name": "Can delete Корзина",
+        "content_type": 30,
+        "codename": "delete_cart"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 120,
+    "fields": {
+        "name": "Can view Корзина",
+        "content_type": 30,
+        "codename": "view_cart"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 121,
+    "fields": {
+        "name": "Can add Товар в корзине",
+        "content_type": 31,
+        "codename": "add_cartitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 122,
+    "fields": {
+        "name": "Can change Товар в корзине",
+        "content_type": 31,
+        "codename": "change_cartitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 123,
+    "fields": {
+        "name": "Can delete Товар в корзине",
+        "content_type": 31,
+        "codename": "delete_cartitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 124,
+    "fields": {
+        "name": "Can view Товар в корзине",
+        "content_type": 31,
+        "codename": "view_cartitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 125,
+    "fields": {
+        "name": "Can add site settings",
+        "content_type": 32,
+        "codename": "add_sitesettings"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 126,
+    "fields": {
+        "name": "Can change site settings",
+        "content_type": 32,
+        "codename": "change_sitesettings"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 127,
+    "fields": {
+        "name": "Can delete site settings",
+        "content_type": 32,
+        "codename": "delete_sitesettings"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 128,
+    "fields": {
+        "name": "Can view site settings",
+        "content_type": 32,
+        "codename": "view_sitesettings"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$toQ3F32eZrY6solFizE77S$heOgNfFIGDx2lHyNh2Pz7TGBKJ6BYeVu8hauxOCFMhE=",
+        "last_login": "2023-06-04T10:57:07.749Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-06-04T10:28:45.289Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$QmY4bPxlQ4LzJDqVfToJ5B$JtFlYy86I5yELuagKVLqyYHt7fCou7fzUZGRVF1c3gw=",
+        "last_login": "2023-06-04T11:06:52.047Z",
+        "is_superuser": false,
+        "username": "kitan",
+        "first_name": "",
+        "last_name": "",
+        "email": "maksim.strelchenko99@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-06-04T10:55:54.362Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin_interface",
+        "model": "theme"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "image"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "category"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "banner"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "discount"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "tag"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "product"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "offer"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "review"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "setofproducts"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "productgroup"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "setdiscount"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "cartdiscount"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+        "app_label": "app_merch",
+        "model": "watchedproduct"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+        "app_label": "app_users",
+        "model": "profile"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+        "app_label": "app_users",
+        "model": "seller"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": {
+        "app_label": "app_users",
+        "model": "buyer"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 24,
+    "fields": {
+        "app_label": "app_users",
+        "model": "comparisonlist"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 25,
+    "fields": {
+        "app_label": "app_users",
+        "model": "deliverytype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 26,
+    "fields": {
+        "app_label": "app_users",
+        "model": "order"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 27,
+    "fields": {
+        "app_label": "app_users",
+        "model": "payment"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 28,
+    "fields": {
+        "app_label": "app_users",
+        "model": "orderitem"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 29,
+    "fields": {
+        "app_label": "app_users",
+        "model": "paymenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 30,
+    "fields": {
+        "app_label": "app_basket",
+        "model": "cart"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 31,
+    "fields": {
+        "app_label": "app_basket",
+        "model": "cartitem"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 32,
+    "fields": {
+        "app_label": "app_settings",
+        "model": "sitesettings"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "6dtpe03s4vdr4jzukht5wesi358dpbrb",
+    "fields": {
+        "session_data": "eyJjYXJ0X2lkIjoiNSJ9:1q5lRE:WFp1VYv9mMyntbvi8baC9-wsH_4UYbRzeXNgj0dyaKU",
+        "expire_date": "2023-06-18T10:58:20.681Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bmwqmzs9uifjqko69t1r283qte47lrqo",
+    "fields": {
+        "session_data": "eyJjYXJ0X2lkIjoiMiJ9:1q5lLA:hJLU492Kt5JxrfZyR9BwLzS0--4aXWt2kzRHqfYGBt4",
+        "expire_date": "2023-06-18T10:52:04.825Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "d9wq9c7oc9tp5v1mlhwghm5rx2v8nufs",
+    "fields": {
+        "session_data": "eyJjYXJ0X2lkIjoiNCJ9:1q5lRE:NSrkAVIq6myArTETKKKZrF22_0MHABM6oEsOYHTEs14",
+        "expire_date": "2023-06-18T10:58:20.217Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "fsbuj7vg8wnditoog5rzr3sabcyx77mk",
+    "fields": {
+        "session_data": ".eJyNVEtzmzAQ_iuMTu3U8QgJMPKpqdupk8Z1XBzHcZvxCElgbF5FIi7J5L8XgacmziG9LLDfQ6tdpCewp4ptBF_nRcZLpiQYPgEEhgBBhM-gcwatuQmHNhniQX_gEhM7HyAcQgiee4DRQq0jXrMd0ANJlNYuERNaTQjRKfrnX8q0Ya3qgTUt1WZdSlG0UvQy51O2E6kG-JamYdZnWaqKyO9rSv-Ayv4k4yL-dOC-MNhQuanVtuCYcJPbNoJcBBj5kInAxgPLshChgc8RYygwGXMsm0CH2C6krhsw4pvQ5WZtKpXIwdDqgcaXU0V1c5gsgiTiPBZ7WgiV1RWA4U8giyUuKqKww8aKC1HNGdt6xWdij7w8ciM_qrwULbOQZ-lqu7IW18z_zac3ywm-ElsSgvseSGkitNeE7mSUGJ4qRFwPJ91lGs03WdrA74hjvzfqss9M28YaSmgUayRphH15FBLyMdRo3cZEM-uuRQ-iqN7aDnF3yJzYKIjx3tmOvSRVmzs-mlX5_PLm8ZF6q8WPZThfShmwUS4vLrcqtKvVIHF2o8vzc7e7lvb7VULLFDpiU0fLb-KgyfAmwiYTGM2H1cRGYLUCdCTh9p22Gb0Ui9RxGXaqPTDRkU85L4SU_yvpNUUh-Kqoluu2lbcsCzc5v4M4rYvRrfr03QrOutsE9_X5ymmViFS9Natvs2xvX4u7h8WXEKPF7aKYzjxLbfZO6o095KnxKja3aH6BZreP7tdJlE6vV_ms2n2fXu3neNb8XPR0TLyzjbZa0uZfbcOCncpbMTE67RHdD__Yo8P0X5h3PPArcSuwzZNGtZ1a1wMtY6X7JBVVZT1cIEvG9JjrE1I_aKjvoWnBRWGYxp5K44AHZRxXRl4WrL48BO_ruy3TtOaGMp__AtU7mR0:1q5lgs:xBTqsDEl0bH5CgHALlTpjac6VJZT8ktYru3BGa_onsk",
+        "expire_date": "2023-06-18T11:14:30.012Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zkkpkk6rpaipt893ffsc9idz7amsprw3",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEDpeC4dO83kAGmFh9g-khMjP9umzRGt-fce17C0zz1fh558DmJg1Bi98sCxSuXVaQLlXOVsZZpyEGuE7nZUZ5q4ttx2_4Fehr75U0WNTIbuzcWEFSKVjUYdNuqmAw6sl3Hiilg50xDARySBo42cUIXmiV6z8U_hhx5yWlEXBE9v0i1ACDeH0Q_Qy0:1q5lQd:Lq-GFMiLbHnq_LGEAwO4-eS-A5KqTc9mRjSuFGhRAEY",
+        "expire_date": "2023-06-18T10:57:43.008Z"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 1,
+    "fields": {
+        "file": "static/assets/img/icons/leopold_pink_xuaaeQW.jpg",
+        "title": "leopold"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 2,
+    "fields": {
+        "file": "static/assets/img/icons/Vortex_Tab_90_yhHxHFY.jpg",
+        "title": "vortex"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 3,
+    "fields": {
+        "file": "static/assets/img/icons/01.jpg",
+        "title": "xtrfy_1"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 4,
+    "fields": {
+        "file": "static/assets/img/icons/Logitech_G_Pro_X_Superlight_Wireless_Black.jpg",
+        "title": "logitech"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 5,
+    "fields": {
+        "file": "static/assets/img/icons/mouse-pad-to-Moon.jpg",
+        "title": "mousepad"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 6,
+    "fields": {
+        "file": "static/assets/img/icons/Superglide-для-Zowie-EC-series-_Black_.jpg",
+        "title": "zowie_glides"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 7,
+    "fields": {
+        "file": "static/assets/img/icons/американская.jpg",
+        "title": "кошка"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 8,
+    "fields": {
+        "file": "static/assets/img/icons/американская2.jpg",
+        "title": "кошка2"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 9,
+    "fields": {
+        "file": "static/assets/img/icons/Chopper_s_hat.jpg",
+        "title": "чоппер"
+    }
+},
+{
+    "model": "app_merch.image",
+    "pk": 10,
+    "fields": {
+        "file": "static/assets/img/icons/BUTTERFLY.jpg",
+        "title": "зомо"
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 1,
+    "fields": {
+        "title": "Клавиатуры",
+        "icon": null,
+        "parent": null,
+        "slug": "klaviatury",
+        "is_active": true,
+        "lft": 1,
+        "rght": 8,
+        "tree_id": 1,
+        "level": 0
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 2,
+    "fields": {
+        "title": "Vortex",
+        "icon": null,
+        "parent": 1,
+        "slug": "vortex",
+        "is_active": true,
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 3,
+    "fields": {
+        "title": "Мышки",
+        "icon": null,
+        "parent": null,
+        "slug": "myshki",
+        "is_active": true,
+        "lft": 1,
+        "rght": 8,
+        "tree_id": 3,
+        "level": 0
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 4,
+    "fields": {
+        "title": "Xtrfy",
+        "icon": null,
+        "parent": 3,
+        "slug": "xtrfy",
+        "is_active": true,
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 3,
+        "level": 1
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 5,
+    "fields": {
+        "title": "Logitech",
+        "icon": null,
+        "parent": 3,
+        "slug": "logitech",
+        "is_active": true,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 3,
+        "level": 1
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 6,
+    "fields": {
+        "title": "Коврики для мыши",
+        "icon": null,
+        "parent": null,
+        "slug": "kovriki-dlya-myshi",
+        "is_active": true,
+        "lft": 1,
+        "rght": 2,
+        "tree_id": 2,
+        "level": 0
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 7,
+    "fields": {
+        "title": "Leopold",
+        "icon": null,
+        "parent": 1,
+        "slug": "leopold",
+        "is_active": true,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 8,
+    "fields": {
+        "title": "Ножки",
+        "icon": null,
+        "parent": 3,
+        "slug": "nozhki",
+        "is_active": true,
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 3,
+        "level": 1
+    }
+},
+{
+    "model": "app_merch.category",
+    "pk": 9,
+    "fields": {
+        "title": "Клавиши",
+        "icon": null,
+        "parent": 1,
+        "slug": "klavishi",
+        "is_active": true,
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "app_merch.tag",
+    "pk": 1,
+    "fields": {
+        "title": "Fun"
+    }
+},
+{
+    "model": "app_merch.tag",
+    "pk": 2,
+    "fields": {
+        "title": "Esports"
+    }
+},
+{
+    "model": "app_merch.tag",
+    "pk": 3,
+    "fields": {
+        "title": "Gadget"
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 1,
+    "fields": {
+        "title": "Leopold FC660M BT Light Pink",
+        "description": "Leopold FC660M BT Light Pink — беспроводная клавиатура 65% формата с низкопрофильными double-shot PBT кейкапами и заводской шумоизоляцией. Компактность никак не влияет на функциональность. FC660M обладает теми же функциями, что и полноразмерный вариа",
+        "created_at": "2023-06-04T10:48:40.906Z",
+        "category": 7,
+        "icon": 1,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            2,
+            3
+        ],
+        "media": [
+            1
+        ]
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 2,
+    "fields": {
+        "title": "Vortex Tab 90",
+        "description": "Vortexgear – известный в кругах любителей качественной механики Тайваньский производитель. Выделяются от других производителей своим желанием упаковать в компактный корпус огромный функционал: обширная программируемость, отсутствие зазоров между клав",
+        "created_at": "2023-06-04T10:49:21.674Z",
+        "category": 2,
+        "icon": 2,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            2,
+            3
+        ],
+        "media": [
+            2
+        ]
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 3,
+    "fields": {
+        "title": "Xtrfy M4 RGB Черная",
+        "description": "Хорошей клавиатуре — хорошая мышка. Поэтому мы привезли мышки Xtrfy — легкие, эргономичные, с подсветкой и крутой начинкой.",
+        "created_at": "2023-06-04T10:50:18.042Z",
+        "category": 4,
+        "icon": 3,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            1,
+            2,
+            3
+        ],
+        "media": [
+            3
+        ]
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 4,
+    "fields": {
+        "title": "Logitech G Pro X Superlight Wireless",
+        "description": "G PRO X SUPERLIGHT — самая легкая мышь из моделей серии PRO. С нулевым ускорением, сглаживанием и фильтрацией. Работает до 70 часов без подзарядки, имеет поддержку PowerPlay и свой софт для настройки.",
+        "created_at": "2023-06-04T10:51:03.703Z",
+        "category": 5,
+        "icon": 4,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            2
+        ],
+        "media": [
+            4
+        ]
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 5,
+    "fields": {
+        "title": "Коврик Varmilo Chang'e the Moon",
+        "description": "Коврик на рабочий стол Varmilo Chang'e — Flying to the Moon с прошитыми краями. Размер – 90х40x0.3 см.",
+        "created_at": "2023-06-04T10:51:39.133Z",
+        "category": 6,
+        "icon": 5,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            1
+        ],
+        "media": [
+            5
+        ]
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 6,
+    "fields": {
+        "title": "Стеклянные ножки Superglide для мыши — Zowie EC series",
+        "description": "Superglide — это ножки для мыши из алюмосиликатного стекла. \r\n\r\nПомогают мышке не цепляться за поверхность коврика, поэтому скольжение получается более плавным, точным и быстрым, по сравнению со стандартными глайдами из ПТФЭ. \r\n\r\nЕсли вы поклонник speed-покрытия и хотите контролировать каждый миллиметр движения мыши, то стеклянные глайды — для вас.",
+        "created_at": "2023-06-04T11:01:10.766Z",
+        "category": 8,
+        "icon": 6,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            2
+        ],
+        "media": [
+            6
+        ]
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 7,
+    "fields": {
+        "title": "Клавиша ZOMO «Американская короткошёрстная»",
+        "description": "Клавиша в форме кошачьей лапки с силиконовыми подушечками в пластиковом кейсе. Корпус из ABS-пластика. Милейшее дополнение к любой клавиатуре (^˵◕ω◕˵^)",
+        "created_at": "2023-06-04T11:02:39.724Z",
+        "category": 9,
+        "icon": 7,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            1
+        ],
+        "media": [
+            7,
+            8
+        ]
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 8,
+    "fields": {
+        "title": "Клавиша ZOMO «Chopper's hat»",
+        "description": "«А я думал, что капитан — это тот, кто никого не слушает!»\r\n\r\nТони Тони Чоппер\r\n\r\nКейкап изготовлен из алюминия и совместим со всеми Cherry-подобными переключателями — маленький акцент для уникальной клавиатуры.",
+        "created_at": "2023-06-04T11:03:42.751Z",
+        "category": 9,
+        "icon": 9,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            1
+        ],
+        "media": [
+            9
+        ]
+    }
+},
+{
+    "model": "app_merch.product",
+    "pk": 9,
+    "fields": {
+        "title": "Клавиша ZOMO «Butterfly»",
+        "description": "Кейкап изготовлен из алюминия и совместим со всеми Cherry-подобными переключателями — маленький акцент для уникальной клавиатуры.",
+        "created_at": "2023-06-04T11:04:46.911Z",
+        "category": 9,
+        "icon": 10,
+        "characters": {
+            "Общая информация": {
+                "Дата выхода на рынок": "2022 г."
+            },
+            "Основные": {
+                "Тип": "смартфон",
+                "Операционная система": "Apple iOS",
+                "Версия ОС на момент выхода": "iOS 16",
+                "Размер экрана": "750х1334",
+                "Технология экрана": "IPS",
+                "Частота обновления экрана": "60Гц",
+                "Оперативная память": "6 ГБ",
+                "Встроенная память": "128 ГБ",
+                "Количество точек матриц": "12 Мп",
+                "Характеристики камеры": "нет данных",
+                "Максимальное разрешение видео": "3840х2160 (60 кадров/с)",
+                "Беспроводная зарядка": "+",
+                "Быстрая зарядка": "+",
+                "Поддержка карт памяти": "-",
+                "Количество SIM-карт": "1"
+            },
+            "Процессор": {
+                "Платформа": "Apple A",
+                "Процессор": "Apple A16 Bionic",
+                "Количество ядер": "6 (2+4)",
+                "Разрядность процессора": "64 бита",
+                "Техпроцесс": "5 нм",
+                "AnTuTu v9 Total Score": "нет данных"
+            },
+            "Конструкция": {
+                "Конструкция корпуса": "моноблок",
+                "Сменные панели": "-",
+                "Материал корпуса": "металл",
+                "Материал задней крышки": "стекло",
+                "Цвет корпуса": "черный",
+                "Цвет фронтальной панели": "черный",
+                "Ударопрочный корпус": "-",
+                "Пыле- и влагозащита": "IP68",
+                "Физическая QWERTY-клавиатура": "-",
+                "Расположение фронтальной камеры": "классическое",
+                "Кнопка SOS": "-",
+                "Формат SIM-карты": "nano-SIM, eSIM"
+            },
+            "Размер и вес": {
+                "Длина": "137.4 мм",
+                "Ширина": "67.3 мм",
+                "Толщина": "8.3 мм",
+                "Вес": "156 г"
+            },
+            "Экран": {
+                "Количество цветов экрана": "16 млн",
+                "Разрешающая способность экрана": "256 ppi",
+                "Соотношение сторон": "16:9",
+                "Сенсорный экран": "+",
+                "Защита от царапин": "+",
+                "Постоянная работа экрана": "нет данных"
+            }
+        },
+        "is_active": true,
+        "tags": [
+            1
+        ],
+        "media": [
+            10
+        ]
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 1,
+    "fields": {
+        "seller": 1,
+        "product": 1,
+        "price": "12000.00",
+        "quantity": 22,
+        "is_active": true,
+        "created_at": "2023-06-04T10:53:57.266Z",
+        "is_delivery_free": true,
+        "total_views": 100
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 2,
+    "fields": {
+        "seller": 1,
+        "product": 2,
+        "price": "15000.00",
+        "quantity": 54,
+        "is_active": true,
+        "created_at": "2023-06-04T10:54:10.033Z",
+        "is_delivery_free": false,
+        "total_views": 123
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 3,
+    "fields": {
+        "seller": 1,
+        "product": 4,
+        "price": "9666.00",
+        "quantity": 100,
+        "is_active": true,
+        "created_at": "2023-06-04T10:54:31.072Z",
+        "is_delivery_free": true,
+        "total_views": 1000
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 4,
+    "fields": {
+        "seller": 1,
+        "product": 3,
+        "price": "6430.00",
+        "quantity": 43,
+        "is_active": true,
+        "created_at": "2023-06-04T10:57:25.578Z",
+        "is_delivery_free": true,
+        "total_views": 222
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 5,
+    "fields": {
+        "seller": 1,
+        "product": 5,
+        "price": "2999.00",
+        "quantity": 150,
+        "is_active": true,
+        "created_at": "2023-06-04T10:57:39.258Z",
+        "is_delivery_free": false,
+        "total_views": 699
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 6,
+    "fields": {
+        "seller": 1,
+        "product": 6,
+        "price": "2999.00",
+        "quantity": 10,
+        "is_active": true,
+        "created_at": "2023-06-04T11:05:07.377Z",
+        "is_delivery_free": false,
+        "total_views": 0
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 7,
+    "fields": {
+        "seller": 1,
+        "product": 7,
+        "price": "4999.00",
+        "quantity": 22,
+        "is_active": true,
+        "created_at": "2023-06-04T11:05:20.530Z",
+        "is_delivery_free": true,
+        "total_views": 1100
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 8,
+    "fields": {
+        "seller": 1,
+        "product": 8,
+        "price": "5500.00",
+        "quantity": 43,
+        "is_active": true,
+        "created_at": "2023-06-04T11:05:34.552Z",
+        "is_delivery_free": true,
+        "total_views": 333
+    }
+},
+{
+    "model": "app_merch.offer",
+    "pk": 9,
+    "fields": {
+        "seller": 1,
+        "product": 9,
+        "price": "4490.00",
+        "quantity": 222,
+        "is_active": true,
+        "created_at": "2023-06-04T11:06:07.256Z",
+        "is_delivery_free": true,
+        "total_views": 54
+    }
+},
+{
+    "model": "app_merch.banner",
+    "pk": 1,
+    "fields": {
+        "title": "Leopold FC660M BT",
+        "primary_text": "Light Pink",
+        "description": "Leopold FC660M BT Light Pink — беспроводная клавиатура 65% формата с низкопрофильными double-shot PBT кейкапами и заводской шумоизоляцией. Компактность никак не влияет на функциональность. FC660M обладает теми же функциями, что и полноразмерный вариа",
+        "file": 1,
+        "is_active": true,
+        "link": "http://0.0.0.0:8000/product_detail/1"
+    }
+},
+{
+    "model": "app_merch.banner",
+    "pk": 2,
+    "fields": {
+        "title": "Vortex Tab",
+        "primary_text": "90",
+        "description": "Vortexgear – известный в кругах любителей качественной механики Тайваньский производитель. Выделяются от других производителей своим желанием упаковать в компактный корпус огромный функционал: обширная программируемость, отсутствие зазоров между клав",
+        "file": 2,
+        "is_active": true,
+        "link": "http://0.0.0.0:8000/product_detail/2"
+    }
+},
+{
+    "model": "app_merch.banner",
+    "pk": 3,
+    "fields": {
+        "title": "Xtrfy M4 RGB",
+        "primary_text": "Черная",
+        "description": "Хорошей клавиатуре — хорошая мышка. Поэтому мы привезли мышки Xtrfy — легкие, эргономичные, с подсветкой и крутой начинкой.",
+        "file": 3,
+        "is_active": true,
+        "link": "http://0.0.0.0:8000/product_detail/3"
+    }
+},
+{
+    "model": "app_merch.banner",
+    "pk": 4,
+    "fields": {
+        "title": "Logitech G Pro X Superlight",
+        "primary_text": "Wireless",
+        "description": "G PRO X SUPERLIGHT — самая легкая мышь из моделей серии PRO. С нулевым ускорением, сглаживанием и фильтрацией. Работает до 70 часов без подзарядки, имеет поддержку PowerPlay и свой софт для настройки.",
+        "file": 4,
+        "is_active": true,
+        "link": "http://0.0.0.0:8000/product_detail/4"
+    }
+},
+{
+    "model": "app_merch.banner",
+    "pk": 5,
+    "fields": {
+        "title": "Коврик Varmilo Chang'e",
+        "primary_text": "the Moon",
+        "description": "Коврик на рабочий стол Varmilo Chang'e — Flying to the Moon с прошитыми краями. Размер – 90х40x0.3 см.",
+        "file": 5,
+        "is_active": true,
+        "link": "http://0.0.0.0:8000/product_detail/5"
+    }
+},
+{
+    "model": "app_merch.watchedproduct",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "product": 5,
+        "view_date": "2023-06-04T10:58:56.951Z"
+    }
+},
+{
+    "model": "app_merch.watchedproduct",
+    "pk": 2,
+    "fields": {
+        "user": 2,
+        "product": 2,
+        "view_date": "2023-06-04T11:06:54.733Z"
+    }
+},
+{
+    "model": "app_merch.watchedproduct",
+    "pk": 3,
+    "fields": {
+        "user": 2,
+        "product": 7,
+        "view_date": "2023-06-04T11:07:02.015Z"
+    }
+},
+{
+    "model": "app_merch.watchedproduct",
+    "pk": 4,
+    "fields": {
+        "user": 2,
+        "product": 9,
+        "view_date": "2023-06-04T11:07:14.911Z"
+    }
+},
+{
+    "model": "app_merch.watchedproduct",
+    "pk": 5,
+    "fields": {
+        "user": 2,
+        "product": 1,
+        "view_date": "2023-06-04T11:07:37.239Z"
+    }
+},
+{
+    "model": "app_merch.watchedproduct",
+    "pk": 6,
+    "fields": {
+        "user": 2,
+        "product": 4,
+        "view_date": "2023-06-04T11:13:10.498Z"
+    }
+},
+{
+    "model": "app_users.profile",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "full_name": "Maksim Strelchenko",
+        "phone_number": "79600271112",
+        "address": "Moscow, st. Red Square 43",
+        "avatar": null
+    }
+},
+{
+    "model": "app_users.profile",
+    "pk": 2,
+    "fields": {
+        "user": 2,
+        "full_name": "Maksim Strelchenko",
+        "phone_number": "796564515533",
+        "address": "664 Harrison Street, CA, California",
+        "avatar": null
+    }
+},
+{
+    "model": "app_users.seller",
+    "pk": 1,
+    "fields": {
+        "profile": 1,
+        "title": "DNS",
+        "description": "Большой ассортимент электроники, цифровой и бытовой техники, а так же товаров для дома, известных брендов в интернет-магазине DNS по отличным ценам."
+    }
+},
+{
+    "model": "app_users.buyer",
+    "pk": 1,
+    "fields": {
+        "profile": 2,
+        "views": []
+    }
+},
+{
+    "model": "app_users.paymenttype",
+    "pk": 1,
+    "fields": {
+        "title": "Онлайн картой",
+        "is_active": true
+    }
+},
+{
+    "model": "app_users.paymenttype",
+    "pk": 2,
+    "fields": {
+        "title": "Онлайн картой со случайного счёта",
+        "is_active": true
+    }
+},
+{
+    "model": "app_users.paymenttype",
+    "pk": 3,
+    "fields": {
+        "title": "Долями",
+        "is_active": true
+    }
+},
+{
+    "model": "app_users.payment",
+    "pk": 1,
+    "fields": {
+        "buyer": 1,
+        "payment_type": 2,
+        "credit_card": null
+    }
+},
+{
+    "model": "app_users.deliverytype",
+    "pk": 1,
+    "fields": {
+        "type": "Обычная доставка",
+        "price": "0.00"
+    }
+},
+{
+    "model": "app_users.deliverytype",
+    "pk": 2,
+    "fields": {
+        "type": "Экспресс доставка",
+        "price": "2000.00"
+    }
+},
+{
+    "model": "app_users.order",
+    "pk": 1,
+    "fields": {
+        "buyer": 1,
+        "payment": 1,
+        "payment_status": "paid",
+        "address": {
+            "city": "Москва",
+            "address": "Москва, Россия, улица какая-та"
+        },
+        "delivery_type": 1,
+        "order_date": "2023-06-04T11:07:45.529Z",
+        "departure_date": "2023-06-04T00:00:00Z",
+        "delivery_date": null,
+        "order_status": "is_delivering"
+    }
+},
+{
+    "model": "app_users.orderitem",
+    "pk": 1,
+    "fields": {
+        "offer": 2,
+        "order": 1,
+        "quantity": 1
+    }
+},
+{
+    "model": "app_users.orderitem",
+    "pk": 2,
+    "fields": {
+        "offer": 1,
+        "order": 1,
+        "quantity": 1
+    }
+},
+{
+    "model": "app_users.orderitem",
+    "pk": 3,
+    "fields": {
+        "offer": 3,
+        "order": 1,
+        "quantity": 1
+    }
+},
+{
+    "model": "app_basket.cart",
+    "pk": 1,
+    "fields": {
+        "buyer": null
+    }
+},
+{
+    "model": "app_basket.cart",
+    "pk": 2,
+    "fields": {
+        "buyer": null
+    }
+},
+{
+    "model": "app_basket.cart",
+    "pk": 4,
+    "fields": {
+        "buyer": null
+    }
+},
+{
+    "model": "app_basket.cart",
+    "pk": 5,
+    "fields": {
+        "buyer": null
+    }
+},
+{
+    "model": "app_basket.cart",
+    "pk": 6,
+    "fields": {
+        "buyer": null
+    }
+},
+{
+    "model": "app_basket.cart",
+    "pk": 8,
+    "fields": {
+        "buyer": 1
+    }
+},
+{
+    "model": "app_settings.sitesettings",
+    "pk": 1,
+    "fields": {
+        "time_to_cache": 0,
+        "banners_cache_time": 0,
+        "top_seller_products_cache_time": 0
+    }
+}
+]

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="Middle Middle_top" xmlns="http://www.w3.org/1999/html">
+        <div class="Section">
+            <div class="wrap">
+                <form id="change2" action="{% url 'app_basket:change_cart' %}" method="post">
+                    {% csrf_token %}
+                    {% for cartitem in cart_user %}
+                    <div class="Cart-product">
+                        <div class="Cart-block Cart-block_row">
+                            <div class="Cart-block Cart-block_pict"><a class="Cart-pict" href="#"><img class="Cart-img" src="/{% firstof cartitem.offer.product.icon.file 'static/assets/img/content/home/no-pic.png' %}" alt="bigGoods2.jpg" /></a>
+                            </div>
+                            <div class="Cart-block Cart-block_info"><a class="Cart-title" href="{% url 'pages:product-detail' cartitem.offer.product.pk %}">{{cartitem.offer.product.title}}</a>
+                                <div class="Cart-desc">{{cartitem.offer.product.description}}</div>
+                            </div>
+
+                        </div>
+                            <div class="Cart-block Cart-block_row">
+                                <div class="Cart-block Cart-block_seller">
+                                    <div class="Cart-desc">Продавец: {{cartitem.offer.seller}}</div>
+                                <!-- - var options = setOptions(items, ['value', 'selected', 'disabled']);-->
+
+                                </div>
+                                <div class="Cart-block Cart-block_price">
+                                <div class="Cart-desc">Цена за ед.</div>
+                                <div class="Cart-price">{{cartitem.price|floatformat:2}}&nbsp;₽</div>
+                            </div>
+                            <div class="Cart-block Cart-block_amount">
+                                <div class="Cart-amount">
+
+                                            <style>
+                                                .raz {
+                                                    all: unset;
+                                                    -moz-appearance: textfield;
+                                                    width: 1.2em;
+                                                    text-align: center;
+                                                    font-size: 1.5em;
+                                                    }
+                                                    .raz::-webkit-inner-spin-button {
+                                                    display: none;
+                                                    }
+                                            </style>
+
+                                        <form action="{% url 'app_basket:change_cart' %}" method="post">
+                                            {% csrf_token %}
+                                        <button style="font-size:2em; padding: 1px 8.5px;" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                                        <input name="amount" type="number" min="1" max="{{cartitem.offer.quantity}}" step="1" value="{{cartitem.quantity}}" class="raz"/>
+                                        <button style="font-size:1.8em; padding: 1px 5.5px; "type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                                        <input style="background-color: #ebebeb; color: black; border: 1px solid red" type="submit" value="Изменить">
+                                        <input type="hidden" name="cartitem_id" value="{{ cartitem.id }}">
+                                        </form>
+
+                                </div>
+                            </div>
+                            <div class="Cart-block Cart-block_price">
+                                <div class="Cart-desc">Сумма за {{cartitem.quantity}} шт</div>
+                                <div class="Cart-price">{{cartitem.total_price|floatformat:2}}&nbsp;₽</div>
+                            </div>
+                            <div class="Cart-block Cart-block_delete"><a class="Cart-delete" href="{% url 'app_basket:remove_from_cart' %}?cartitem_id={{cartitem.id}}"><img src="{% static '/assets/img/icons/card/delete.svg'%}" alt="delete.svg" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% if cart_user %}
+                    <div class="Cart-total">
+                        <div class="Cart-block Cart-block_row">
+                            <strong class="Cart-title">Итого:</strong>
+                            <span class="Cart-price">{{price}} ₽</span>
+                            <div class="Cart-price" style="width:5px"></div>
+                            {% if discount_cart == True %}
+                            <strong class="Cart-title">Скидка на корзину:</strong>
+                            <span class="Cart-price">{{discount|floatformat:2}} ₽</span>
+                            {% elif discount_cart == False %}
+                            <strong class="Cart-title">Скидка на набор "{{discount.0}}":</strong>
+                            <span class="Cart-price">{{discount.1|floatformat:2}} ₽</span>
+                            {% elif not discount_cart %}
+                            <strong class="Cart-title">Скидка: </strong>
+                            <span class="Cart-price">{{discount|floatformat:2}} ₽</span>
+                            {% endif %}
+
+                            <div class="Cart-price" style="width:10px"></div>
+                            <strong class="Cart-title">Сумма со скидкой:
+                            <span class="Cart-price" style="color:red">{{total_price|floatformat:2}} ₽</span>
+                            </strong>
+
+
+                        <div class="Cart-block"><a class="btn btn_success btn_lg" href="{% url 'pages:order-step-1' %}">Оформить заказ</a>
+                        </div>
+                    </div>
+                    {% else %}
+                        <div align="center">
+                        <strong class="Cart-title">Ваша корзина пуста. <a href="{% url 'pages:catalog-view' %}">Продолжить покупки</a>.
+                        </strong>
+                        <img src="{% static 'assets/img/content/home/empty_cart.jpg' %}" alt="empty_cart" style="max-width: 500px; width: 100%"/>
+                        </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

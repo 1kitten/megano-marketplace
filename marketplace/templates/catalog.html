@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load product_discount_tags %}
+{% load static %}
+{% load query_transformer_tags %}
+
+{% block content %}
+        <div class="Middle Middle_top">
+        <div class="Section Section_column Section_columnLeft">
+            <div class="wrap">
+                <div class="Section-column">
+                    <div class="Section-columnSection">
+                        <header class="Section-header">
+                            <strong class="Section-title">Фильтр
+                            </strong>
+                        </header>
+                        <div class="Section-columnContent">
+                            <form class="form" action="{% url 'pages:catalog-view' %}" method="get">
+                                <div class="form-group">
+                                    <div class="range Section-columnRange">
+                                        <input class="range-line" id="price" name="price" type="text" data-type="double" data-min="{{ min_price }}" data-max="{{ max_price }}" data-from="{% firstof curr_min_price min_price %}" data-to="{% firstof curr_max_price max_price %}" />
+                                        <div class="range-price">Цена:&#32;
+                                            <div class="rangePrice">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-input form-input_full" id="title" name="title" type="text" placeholder="Название" value="{{ title }}"/>
+                                </div>
+                                <div class="form-group">
+                                    <!-- - var options = setOptions(items, ['value', 'selected', 'disabled']);-->
+                                </div>
+                                <div class="form-group">
+                                    <label class="toggle">
+                                        <input type="checkbox" {% if in_stock %} checked="checked" {% endif %}name="in_stock"/><span class="toggle-box"></span><span class="toggle-text">Только товары в наличии</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="toggle">
+                                        <input type="checkbox" {% if delivery_free %} checked="checked" {% endif %} name="delivery_free"/><span class="toggle-box"></span><span class="toggle-text">С бесплатной доставкой</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="buttons"><button class="btn btn_square btn_dark btn_narrow" type="submit">Фильтр</button>
+                                    </div>
+                                </div>
+                                <input type="text" name="cat" style="display: None" value="{% firstof category 'all' %}"/>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="Section-columnSection">
+                        <header class="Section-header">
+                            <strong class="Section-title">Популярные тэги
+                            </strong>
+                        </header>
+                        <div class="Section-columnContent">
+                            <div class="buttons">
+                            {% for tag in tags %}
+                            <a class="btn btn_default btn_sm" href="{% url 'pages:catalog-view' %}?tag={{ tag.pk }}">{{ tag.title }}</a>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Section-content">
+                    <div class="Sort">
+                        <div class="Sort-title">Сортировать по:
+                        </div>
+                        <div class="Sort-variants">
+                            <a
+                                    {% if views_sort == 'desc' %}
+                                        class="Sort-sortBy Sort-sortBy_inc"
+                                        href="?{% query_transform views_sort='asc' %}"
+                                    {% elif views_sort == 'asc' %}
+                                        class="Sort-sortBy Sort-sortBy_dec"
+                                        href="?{% query_transform views_sort='desc' %}"
+                                    {% else %}
+                                        class="Sort-sortBy"
+                                        href="?{% query_transform views_sort='desc' %}"
+                                    {% endif %}
+                            >Популярности
+                            </a>
+                            <a
+                                    {% if price_sort == '-min_price' %}
+                                        class="Sort-sortBy Sort-sortBy_inc"
+                                        href="?{% query_transform price_sort='min_price' %}"
+                                    {% elif price_sort == 'min_price' %}
+                                        class="Sort-sortBy Sort-sortBy_dec"
+                                        href="?{% query_transform price_sort='-min_price' %}"
+                                    {% else %}
+                                        class="Sort-sortBy"
+                                        href="?{% query_transform price_sort='-min_price' %}"
+                                    {% endif %}>Цене
+                            </a>
+                            <a
+                                    {% if reviews_sort == 'desc' %}
+                                        class="Sort-sortBy Sort-sortBy_dec"
+                                        href="?{% query_transform reviews_sort='asc' %}"
+                                    {% elif reviews_sort == 'asc' %}
+                                        class="Sort-sortBy Sort-sortBy_inc"
+                                        href="?{% query_transform reviews_sort='desc' %}"
+                                    {% else %}
+                                        class="Sort-sortBy"
+                                        href="?{% query_transform reviews_sort='desc' %}"
+                                    {% endif %}>Отзывам</a>
+                            <a
+                                    {% if created_at_sort == '-created_at' %}
+                                        class="Sort-sortBy Sort-sortBy_inc"
+                                        href="?{% query_transform created_at_sort='created_at' %}"
+                                    {% elif created_at_sort == 'created_at' %}
+                                        class="Sort-sortBy Sort-sortBy_dec"
+                                        href="?{% query_transform created_at_sort='-created_at' %}"
+                                    {% else %}
+                                        class="Sort-sortBy"
+                                        href="?{% query_transform created_at_sort='-created_at' %}"
+                                    {% endif %}>Новизне
+                            </a>
+                            {% if any_sort %}
+                            <a style="font-size: 13px" href="{% url 'pages:catalog-view' %}">x Сбросить</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="Cards">
+                        {% for product in products %}
+                        <div class="Card"><a class="Card-picture" href="{% url 'pages:product-detail' product.pk %}"><img src="/{% firstof product.icon__file 'static/assets/img/content/home/no-pic.png' %}" alt="card.jpg" /></a>
+                            <div class="Card-content">
+                                <strong class="Card-title"><a href="{% url 'pages:product-detail' product.pk %}">{{ product.title }}</a>
+                                </strong>
+                                <div class="Card-description">
+                                    <div class="Card-cost">
+                                        {% is_discounted product.pk as discount%}
+                                        {% if discount %}
+                                            <span class="Card-price"><del style="color: #df3349">{% avg_price product.pk %}</del></span>
+                                            <span class="Card-price">{% avg_discount_price product.pk %}</span>
+                                        {% else %}
+                                             <span class="Card-price">{{ product.min_price }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="Card-category">{{ product.category__title }}
+                                    </div>
+                                    <div class="Card-hover">
+                                        <a class="Card-btn" href="{% url 'pages:product-detail' product.pk %}"><img src="{% static 'assets/img/icons/card/cart.svg' %}" alt="cart.svg" /></a>
+                                        <a class="Card-btn" href="{% url 'pages:add_to_comparison_list'%}?product={{ product.pk }}"><img src="{% static 'assets/img/icons/card/change.svg' %}" alt="change.svg" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <img src="{% static 'assets/img/content/home/no_res.png' %}" alt="no_results" style="max-width: 600px; width: 100%"/>
+                        {% endfor %}
+                    </div>
+                    {% if page_obj.has_other_pages %}
+                    <div class="Pagination">
+                        <div class="Pagination-ins">
+                            {% if page_obj.has_previous %}
+                            <a class="Pagination-element Pagination-element_prev" href="?{% query_transform page=page_obj.previous_page_number %}"><img src="{% static '/assets/img/icons/prevPagination.svg' %}" alt="prevPagination.svg" /></a>
+                            {% endif %}
+
+                            {% for p in paginator.page_range %}
+                            {% if page_obj.number == p %}
+                                <a class="Pagination-element Pagination-element_current"><span class="Pagination-text">{{ p }}</span></a>
+                            {% elif p >= page_obj.number|add:-1 and p <= page_obj.number|add:1 %}
+                                 <a class="Pagination-element" href="?{% query_transform page=p %}"><span class="Pagination-text">{{ p }}</span></a>
+                            {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                            <a class="Pagination-element Pagination-element_prev" href="?{% query_transform page=page_obj.next_page_number %}"><img src="{% static 'assets/img/icons/nextPagination.svg' %}" alt="nextPagination.svg" /></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

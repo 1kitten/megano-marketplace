@@ -1,0 +1,49 @@
+{% extends 'base_mini.html' %}
+
+{% block main %}
+
+<style>
+    .custom-avatar {
+        background: rgb(0, 99, 209);
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 0.8em;
+        cursor: pointer;
+    }
+</style>
+
+<div class="wrap">
+    <div class="wrapper">
+        <div class="header">
+            <h3 class="sign-in">Регистрация</h3>
+        </div>
+        <div class="clear"></div>
+        <form action="{% url 'app_users:register' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+
+            <input type="button" value="Загрузить аватар" id="custom-avatar" class="custom-avatar"/>
+
+            <input type="submit" value="Зарегистрироваться" />
+
+            <a class="registr" href="{% url 'app_users:login' %}"> Вход </a>
+            <div class="clear"></div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const realFileBtn = document.getElementById("id_avatar");
+    const customBtn = document.getElementById("custom-avatar");
+
+    customBtn.addEventListener("click", function() {
+        realFileBtn.click();
+    });
+</script>
+
+{% endblock %}

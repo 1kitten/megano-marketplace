@@ -1,0 +1,48 @@
+{% load static %}
+<!--END-->
+<!--END-->
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie7" lang="ru">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie8" lang="ru">
+<![endif]-->
+<!--[if IE 9]>
+<html class="ie9" lang="ru">
+<![endif]-->
+<!--[if IE 10]>
+<html class="ie10" lang="ru">
+<![endif]-->
+<!--[if IE 11]>
+<html class="ie11" lang="ru">
+<![endif]-->
+<!--[if gt IE 11]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+    <title>{% block title %}Megano{% endblock %}</title>
+    {% block meta_page_description %}{% endblock %}
+    {% include 'includes/head.html' %}
+</head>
+<body class="Site">
+    <header class="Header">
+        {% include 'includes/header_mini.html' %}
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer class="Footer">
+        {% include 'includes/footer.html' %}
+    </footer>
+    {% block page_scripts %}
+    <script src="{% static 'assets/plg/jQuery/jquery-3.5.0.slim.min.js'%}"></script>
+    <script src="{% static 'assets/plg/form/jquery.form.js'%}"></script>
+    <script src="{% static 'assets/plg/form/jquery.maskedinput.min.js'%}"></script>
+    <script src="{% static 'assets/plg/range/ion.rangeSlider.min.js'%}"></script>
+    <script src="{% static 'assets/plg/Slider/slick.min.js'%}"></script>
+    <script src="{% static 'assets/js/scripts.js'%}"></script>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="Middle Middle_top">
+            <div class="Middle-top">
+                <div class="wrap">
+                    <div class="Middle-header">
+                        <h1 class="Middle-title">{{ seller.title }}
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="Section Section_column Section_columnLeft">
+                <div class="wrap">
+                    <div class="Section-column">
+                        <div class="Section-columnSection">
+                            <div class="Section-columnContent">
+                                <div class="Profile-avatar">
+                                    <div class="Profile-img"><img src="/{% firstof seller.profile.avatar.file 'assets/img/icons/profile.png' %}" alt="profile.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Section-content">
+                        <div class="Profile">
+                            <div class="row">
+                                <div class="row-block">
+                                    <div class="form-group">
+                                    </div>
+                                    <div class="">
+                                        <label class="label" for="name">Описание
+                                        </label>
+                                        <div>{{ seller.description }}</div>
+                                    </div>
+                                </div>
+                                <div class="row-block">
+                                    <div class="">
+                                        <label class="label" for="phone">Телефон
+                                        </label>
+                                        <div>{{ seller.profile.phone_number }}</div>
+                                    </div>
+                                    <div class="">
+                                        <label class="label" for="mail">E-mail
+                                        </label>
+                                        <div>{{ seller.profile.user.email }}</div>
+                                    </div>
+                                    <div class="">
+                                        <label class="label" for="address">Адрес
+                                        </label>
+                                        <div>{{ seller.profile.address }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Section Section_column Section_columnRight">
+            <div class="wrap">
+                <div class="Section-content">
+                    <div class="Slider Slider_carousel">
+                        <header class="Section-header Section-header_close">
+                            <h2 class="Section-title">Топ 10 товаров
+                            </h2>
+                            <div class="Section-control">
+                                <div class="Slider-navigate">
+                                </div>
+                            </div>
+                        </header>
+                        <div class="Slider-box Cards">
+                            {% for offer in offers %}
+                                <div class="Slider-item">
+                                    <div class="Slider-content">
+                                        <div class="Card"><a class="Card-picture" href="{% url 'pages:product-detail' offer.product.pk %}"><img src="/{{ offer.product.icon.file }}" alt="card.jpg" /></a>
+                                            <div class="Card-content">
+                                                <strong class="Card-title"><a href="{% url 'pages:product-detail' offer.product.pk %}">{{ offer.product.title }}</a>
+                                                </strong>
+                                                <div class="Card-description">
+                                                    <div class="Card-cost"><span class="Card-price">{{ offer.price }} руб.</span>
+                                                    </div>
+                                                    <div class="Card-category">{{ offer.product.category.title }}
+                                                    </div>
+                                                    <div class="Card-hover">
+                                                        <a class="Card-btn" href="{% url 'app_basket:add_to_cart'%}?offer_id={{ offer.pk }}">
+                                                            <img src="{% static 'assets/img/icons/card/cart.svg' %}" alt="cart.svg" />
+                                                        </a>
+                                                        <a class="Card-btn" href="{% url 'pages:add_to_comparison_list'%}?product={{ offer.product.pk }}">
+                                                            <img src="{% static 'assets/img/icons/card/change.svg' %}" alt="change.svg" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

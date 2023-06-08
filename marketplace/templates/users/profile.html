@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="Middle Middle_top">
+        <div class="Section Section_column Section_columnLeft">
+            <div class="wrap">
+                <div class="Section-column">
+                    <div class="Section-columnSection">
+                        <header class="Section-header">
+                            <strong class="Section-title">Навигация
+                            </strong>
+                        </header>
+                        <div class="Section-columnContent">
+                            <div class="NavigateProfile">
+                                <ul class="menu menu_vt">
+                                    <li class="menu-item"><a class="menu-link" href="{% url "app_users:account" user.username %}">Личный кабинет</a>
+                                    </li>
+                                    <li class="menu-item_ACTIVE menu-item"><a class="menu-link" href="{% url "app_users:profile_edit" user.username %}">Профиль</a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="{% url "app_users:orders_history" %}">История заказов</a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="{% url "app_users:views_history" user.username %}">История просмотра</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Section-content">
+                    <div class="Profile">
+                        <form class="form Profile-form" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="row-block">
+                                    <div class="form-group">
+                                        <label class="form-label" for="avatar">Аватар
+                                        </label>
+                                        <div class="Profile-avatar Profile-avatar_noimg">
+                                            <label class="Profile-fileLabel" for="avatar"><img src="{% static 'assets/img/icons/upload.png' %}" alt="#.png" />Загрузить фото
+                                            </label>
+                                            {{ avatar_form.file.errors }}
+                                            {{ avatar_form.file }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="name">ФИО
+                                        </label>
+                                        {{ profile_form.full_name.errors }}
+                                        {{ profile_form.full_name }}
+                                    </div>
+                                </div>
+                                <div class="row-block">
+                                    <div class="form-group">
+                                        <label class="form-label" for="phone">Телефон
+                                        </label>
+                                        {{ profile_form.phone_number.errors }}
+                                        {{ profile_form.phone_number }}
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="mail">E-mail
+                                        </label>
+                                        {{ user_form.email.errors }}
+                                        {{ user_form.email }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="password">Пароль
+                                        </label>
+                                        {{ password_form.new_password1.errors }}
+                                        {{ password_form.new_password1 }}
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="passwordReply">Подтверждение пароля
+                                        </label>
+                                        {{ password_form.new_password2.errors }}
+                                        {{ password_form.new_password2 }}
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="Profile-btn">
+                                            <button class="btn btn_success" type="submit">Сохранить
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}DiscountList{% endblock %}
+{% load static %}
+{% load query_transformer_tags %}
+
+{% block content %}
+  {% if discounts %}
+
+
+    <div class="Middle Middle_top">
+        <div class="Section">
+            <div class="wrap">
+                <div class="Cards Cards_blog">
+                    {% for discount in discounts %}
+                    {% if discount.is_active %}
+                    <div class="Card">
+                        <a class="Card-picture" href="{% url 'pages:discount_detail' discount.pk %}">
+                            <img src="{{ discount.product.icon.file.url }}" alt="product_icon" />
+                        </a>
+
+                        {% if discount.start_date and discount.end_date %}
+                            <div class="Card-date">
+                                <strong class="Card-date-number">{{ discount.start_date|date:"d" }}
+                                </strong><span class="Card-date-month">{{ discount.start_date|date:"b Y" }}</span>
+                            </div>
+                            <div class="Card-date Card-date_to">
+                                <strong class="Card-date-number">{{ discount.end_date|date:"d" }}
+                                </strong><span class="Card-date-month">{{ discount.end_date|date:"b Y" }}</span>
+                            </div>
+                        {% elif discount.end_date %}
+                            <div class="Card-date">
+                                <strong class="Card-date-number">{{ discount.end_date|date:"d" }}
+                                </strong><span class="Card-date-month">{{ discount.end_date|date:"b Y" }}</span>
+                            </div>
+                        {% endif %}
+                        {% if discount.is_priority %}
+                            <div class="Card-pin">
+                            </div>
+                        {% endif %}
+                        <div class="Card-content">
+                            <strong class="Card-title">
+                                <a href="{% url 'pages:discount_detail' discount.pk %}">{% if discount.is_percent %}{{ discount.size }}% скидки
+                                            {% else %} Купон {{ discount.size }}${% endif %} на {{ discount.product.title }}
+                                </a>
+                            </strong>
+                            <div class="Card-description">{{ discount.product.description }}</div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% empty %}
+                        <img src="{% static 'assets/img/content/home/no_res.png' %}" alt="no_results" style="max-width: 600px; width: 100%"/>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+  {% if page_obj.has_other_pages %}
+  <div class="Pagination">
+      <div class="Pagination-ins">
+          {% if page_obj.has_previous %}
+          <a class="Pagination-element Pagination-element_prev" href="?{% query_transform page=page_obj.previous_page_number %}"><img src="{% static '/assets/img/icons/prevPagination.svg' %}" alt="prevPagination.svg" /></a>
+          {% endif %}
+
+          {% for p in paginator.page_range %}
+          {% if page_obj.number == p %}
+              <a class="Pagination-element Pagination-element_current"><span class="Pagination-text">{{ p }}</span></a>
+          {% elif p >= page_obj.number|add:-1 and p <= page_obj.number|add:1 %}
+               <a class="Pagination-element" href="?{% query_transform page=p %}"><span class="Pagination-text">{{ p }}</span></a>
+          {% endif %}
+          {% endfor %}
+
+          {% if page_obj.has_next %}
+          <a class="Pagination-element Pagination-element_prev" href="?{% query_transform page=page_obj.next_page_number %}"><img src="{% static 'assets/img/icons/nextPagination.svg' %}" alt="nextPagination.svg" /></a>
+          {% endif %}
+      </div>
+  </div>
+  {% endif %}
+
+{% endblock %}

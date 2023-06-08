@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% load pluralize_reviews %}
+{% load product_tags %}
+
+{% block title %}GoodsDetail{% endblock %}
+
+{% block content %}
+
+<div class="Middle Middle_top">
+        <div class="Section">
+            <div class="wrap">
+                <div class="Product">
+                    <div class="ProductCard">
+                        <div class="ProductCard-look">
+                            <div class="ProductCard-photo">
+                                {% if icon_url %}
+                                    <img src="{{ icon_url }}" alt="{{ object.title }}" />
+                                {% endif %}
+                            </div>
+                            <div class="ProductCard-picts">
+                                {% if media %}
+                                {% for image in media %}
+                                <a class="ProductCard-pict ProductCard-pict_ACTIVE" href="{{ image.file.url }}">
+                                    <img src="{{ image.file.url }}" alt="{{ object.title }}" />
+                                </a>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="ProductCard-desc">
+                            <div class="ProductCard-header">
+                                <h2 class="ProductCard-title">{{ product.title }}</h2>
+                                <div class="ProductCard-info">
+                                    <div class="ProductCard-cost">
+                                        <div class="ProductCard-price">
+                                            {% if product.discounts.is_active%}
+                                                <del style="color: grey;"> ${{ average_price|floatformat:2 }}</del>
+                                                ${{ average_with_discount|floatformat:2 }}
+                                            {% else %}
+                                                ${{ average_with_discount|floatformat:2 }}
+                                            {% endif%}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div><p>Скидка: {{ percentage_difference|floatformat:1 }} %</p></div>
+                            <div class="ProductCard-text">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Продавец</th>
+                                            <th>Без скидки</th>
+                                            <th>Со скидкой</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for offer, price_with_discount in offers_combined %}
+                                            <tr>
+                                                <td>
+                                                    <a href="{% url 'app_users:seller_detail' offer.seller.pk %}">
+                                                    {{ offer.seller.title }}</a>
+                                                </td>
+                                                {% if offer.product.discounts.is_active %}
+                                                <td><del style="color: grey;">${{ offer.price|floatformat:2 }}</del></td>
+                                                    <td>${{ price_with_discount|floatformat:2 }}</td>
+                                                {% else %}
+                                                    <td>${{ offer.price|floatformat:2 }}</td>
+                                                    <td>-</td>
+                                                {% endif %}
+                                                <td>
+                                                    <div class="ProductCard-cartElement">
+                                                    <a class="btn btn_primary"
+                                                       href="{% url 'app_basket:add_to_cart'%}?offer_id={{offer.pk}}">
+                                                        <span class="btn-content">Купить</span></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {% empty %}
+                                        <tr>
+                                            <td colspan="5">Нет доступных предложений</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="ProductCard-footer">
+                                <div class="ProductCard-tags">
+                                    <strong class="ProductCard-tagsTitle">Тэги:
+                                    </strong>
+                                    {% for tag in product.tags.all %}
+                                    <a href="{% url 'pages:catalog-view' %}?tag={{ tag.pk }}">{{ tag.title }}
+                                    {% if not forloop.last %}, {% endif %}</a>{% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Tabs Tabs_default">
+                        <div class="Tabs-links"><a class="Tabs-link_ACTIVE Tabs-link" href="#description">
+                            <span>Описание</span></a><a class="Tabs-link" href="#addit">
+                            <span>Характеристики</span></a><a class="Tabs-link" href="#reviews">
+                            <span>Отзывы ({{ review_count }})</span></a>
+                        </div>
+                        <div class="Tabs-wrap">
+                            <div class="Tabs-block" id="description">
+                                <h2>{{ product.title }}
+                                </h2>
+                                <p>{{ product.description }}</p>
+<!--                                {% if icon_url %}-->
+<!--                                    <img class="pict pict_right" src="{{ icon_url }}" alt="{{ object.title }}" />-->
+<!--                                {% endif %}-->
+
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                            <div class="Tabs-block" id="sellers">
+                                <div class="Categories Categories_product">
+                                </div>
+                            </div>
+                            <div class="Tabs-block" id="addit">
+                                <div class="Product-props">
+                                    {% for key, values in product.characters.items %}
+                                    <div class="Product-prop">
+                                        <strong>{{ key }}</strong>
+                                        <div>
+                                            {% for key_value, value in values.items %}
+                                            <strong>{{ key_value }}: </strong><span>{{ value }}</span><br />
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="Tabs-block" id="reviews">
+                                <header class="Section-header">
+                                    <h3 class="Section-title">
+                                        {% pluralize_reviews review_count %}
+                                    </h3>
+                                </header>
+                                <div class="Comments">
+                                  {% if reviews %}
+                                    {% for review in reviews %}
+                                      <div class="Comment">
+                                        <div class="Comment-column Comment-column_pict">
+                                          <div class="Comment-avatar">
+                                              {% if review.profile.avatar %}
+                                                <img src="{{ review.profile.avatar.file.url }}" alt="Avatar" class="avatar-image">
+                                              {% else %}
+<!--                                                <img src="/static/assets/img/icons/user_icon.svg" alt="Default Avatar" class="avatar-image">-->
+                                              {% endif %}
+                                          </div>
+                                        </div>
+                                        <div class="Comment-column">
+                                          <header class="Comment-header">
+                                            <div>
+                                              <strong class="Comment-title">{{ review.profile.user.username }}</strong>
+                                              <span class="Comment-date">
+                                                  {{ review.created_at|date:"d F Y" }} / {{ review.created_at|time:"H:i:s" }}
+                                              </span><br/>
+                                              <span class="Comment-content">Продавец: <a href="{% url 'app_users:seller_detail' review.offer.seller.pk %}">
+                                                    {{ review.offer.seller.title }}</a>
+                                              </span>
+                                              <span class="Comment-content">
+                                                  {% if review.rating == 1 %}
+                                                    <img src="/static/assets/img/icons/star.svg" alt="Star" class="star-image">
+                                                  {% elif review.rating == 2 %}
+                                                      <img src="/static/assets/img/icons/star.svg" alt="Star" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" class="star-image">
+                                                    {% elif review.rating == 3 %}
+                                                      <img src="/static/assets/img/icons/star.svg" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" class="star-image">
+                                                    {% elif review.rating == 4 %}
+                                                      <img src="/static/assets/img/icons/star.svg" alt="Star" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" class="star-image">
+                                                    {% elif review.rating == 5 %}
+                                                      <img src="/static/assets/img/icons/star.svg" alt="Star" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" alt="Star" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" alt="Star" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" alt="Star" class="star-image">
+                                                      <img src="/static/assets/img/icons/star.svg" alt="Star" class="star-image">
+                                                    {% endif %}
+                                              </span>
+                                            </div>
+                                          </header>
+                                            <div class="Comment-content"><b>Комментарий:</b> {{ review.text }}</div>
+                                        </div>
+                                      </div>
+                                    {% endfor %}
+                                  {% else %}
+                                    <p>Пока нет отзывов</p>
+                                  {% endif %}
+                                </div>
+                                <header class="Section-header Section-header_product">
+                                    <h3 class="Section-title">Добавить отзыв
+                                    </h3>
+                                </header>
+                                <div class="Tabs-addComment">
+                                    {% if user.is_authenticated %}
+                                    <form class="form" action="#" method="post">
+
+                                        <div class="form-group">{% csrf_token %}
+<!--                                            <textarea class="form-textarea" name="review" id="review" placeholder="Отзыв"></textarea>-->
+                                            <label for="seller">Продавец:</label>
+                                            <select name="seller" id="seller" required>
+                                                <option value="" selected disabled>---</option>
+                                              {% for seller in sellers %}
+                                                <option value="{{ seller.id }}">{{ seller.title }}</option>
+                                              {% endfor %}
+                                            </select>
+                                        </div>
+                                            {{ form.as_p }}
+                                        <div class="form-group">
+                                            <button class="btn btn_muted" type="submit">Отправить отзыв
+                                            </button>
+                                        </div>
+                                    </form>
+                                    {% else %}
+                                        <p>Вы должны сначала <a href="{% url 'app_users:login' %}">войти,</a> чтобы оставить отзыв.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

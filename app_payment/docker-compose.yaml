@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+
+  app:
+    build: ./app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+    volumes:
+        - ./data:/data/db
+    ports:
+      - "27017:27017"

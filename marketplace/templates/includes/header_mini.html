@@ -1,0 +1,41 @@
+{% load static %}
+
+        <div class="ControlPanel">
+            <div class="wrap">
+                <div class="row ControlPanel-row">
+                    <div class="row-block">
+                        <div class="row ControlPanel-rowSplit">
+                            <div class="row-block hide_700">
+                                <ul class="menu menu_img menu_smallImg ControlPanel-menu">
+                                    <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'assets/img/icons/socialHeader/tw.svg'%}" alt="tw.svg" /></a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'assets/img/icons/socialHeader/in.svg'%}" alt="in.svg" /></a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'assets/img/icons/socialHeader/pt.svg'%}" alt="pt.svg" /></a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'assets/img/icons/socialHeader/mail.svg'%}" alt="mail.svg" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="row-block"></nav>
+                </div>
+            </div>
+            <!--+div.menuModal#navigate
+      //    +menu([
+      //        ['Главная','index.html'],
+      //        ['Портфолио','index.html'],
+      //        ['Мои проекты','index.html'],
+      //        ['Контакты','index.html']
+      //    ], page === 'article'? 'Портфолио': 'Главная')._main
+
+      block
+      -->
+        </div>
+        <div class="wrap">
+            <div class="row Header-rowMain">
+                <div class="row-block Header-logo"><a class="logo" href="{% url 'pages:index-page' %}"><img class="logo-image" src="{% static 'assets/img/logo.png'%}" alt="logo.png" /></a>
+                </div>
+            </div>
+        </div>

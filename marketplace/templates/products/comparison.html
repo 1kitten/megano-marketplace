@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if comparison_list|length > 1 %}
+        <div class="Middle">
+            <div class="wrap">
+                <div class="Product">
+                {% if not match %}
+                    <div style="text-align: center; margin-top: 60px; margin-bottom: 60px">
+                        <strong class="Cart-title">В сравнении товары из разных категорий.<br>
+                            Их нельзя сравнить
+                        </strong>
+                    </div>
+                {% endif %}
+                    <div class="ProductCard">
+                        {% for product in comparison_list %}
+                            <div class="ProductCard-desc">
+                                <div class="ProductCard-header">
+                                    <h2 class="ProductCard-title">{{ product.title }}
+                                    </h2>
+                                    <div class="ProductCard-look">
+                                        <div class="ProductCard-photo">
+                                            <img src="/{% firstof product.icon.file 'assets/img/content/home/bigGoods.png' %}" alt="bigGoods.png" />
+                                        </div>
+                                    </div>
+                                    <div class="Tabs Tabs_default">
+                                        <div class="Tabs-wrap">
+                                            <div class="Tabs-block" id="description">
+                                                <div class="table">
+
+                                                        <table>
+                                                            <tr>
+                                                                <th class="hed">Характеристика</th>
+                                                                <th class="hed">Значение</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="">Цена (руб.)</td>
+                                                                <td class="">{{ product.best_offer.price }}</td>
+                                                            </tr>
+                                                            {% if match %}
+                                                                {% for params, values in product.characters.items %}
+                                                                <tr>
+                                                                    <td style="background: #d7d7d7"><b>{{ params }}</b></td>
+                                                                    <td style="background: #d7d7d7"></td>
+                                                                </tr>
+                                                                    {% for name, value in values.items %}
+                                                                    <tr>
+                                                                        <td class={{ value.class }}>{{ name }}</td>
+                                                                        <td class={{ value.class }}>{{ value.value }}</td>
+                                                                    </tr>
+                                                                    {% endfor %}
+                                                                {% endfor %}
+                                                            {% endif %}
+                                                        </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ProductCard-info">
+                                    <div class="ProductCard-cost">
+                                        <div class="ProductCard-price">{{ product.offers.price }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ProductCard-cart">
+                                    <div class="ProductCard-cartElement">
+                                        <a class="btn btn_primary" href="{% url 'app_basket:add_to_cart'%}?offer_id={{ product.offers.first.pk }}">
+                                            <img class="btn-icon" src="{% static 'assets/img/icons/card/cart_white.svg' %}" alt="cart_white.svg" />
+                                            <span class="btn-content">Добавить в корзину</span>
+                                        </a>
+                                    </div>
+                                    <div class="ProductCard-cartElement">
+                                        <a class="btn btn_primary" href="{% url 'pages:remove_from_comparison_list'%}?product={{ product.pk }}">
+                                            <img class="btn-icon" src="{% static 'assets/img/icons/card/change_white.svg' %}" alt="change_white.svg" />
+                                            <span class="btn-content">Удалить из сравнения</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% else %}
+        <div style="text-align: center; padding-top: 60px">
+            <div class="ProductCard-cartElement">
+                <a class="btn btn_primary" href="{% url 'pages:clear_comparison_list'%}">
+                    <img class="btn-icon" src="{% static 'assets/img/icons/card/change_white.svg' %}" alt="change_white.svg" />
+                    <span class="btn-content">Очистить сравнение</span>
+                </a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 60px">
+            <strong class="Cart-title">В сравнении добавлено {{ comparison_list|length }} товар(ов).<br>
+                Для отображения списка сравнения должно быть выбрано 2 и более продуктов.
+            </strong>
+            <img src="{% static 'assets/img/content/home/no-pic.png' %}" alt="no-pic.png" style="max-width: 500px; width: 100%"/>
+        </div>
+   {% endif %}
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %}DiscountDetail{% endblock %}
+
+{% block content %}
+
+<h1>
+  Скидка
+</h1>
+
+<div class="Tabs Tabs_default">
+    <div class="Tabs-links">
+        <a class="Tabs-link_ACTIVE Tabs-link" href="#description">
+            <span>детали скидки</span>
+        </a>
+        <a class="Tabs-link" href="#product"><span>Описание продукта</span></a>
+    </div>
+    <div class="Tabs-wrap">
+        <div class="Tabs-block" id="description">
+            <h2>Скидка действует на
+                <a href="{% url 'pages:product-detail' discount.product.pk %}">
+                    {{ discount.product.title }}
+                </a>
+            </h2>
+
+            <div class="clearfix">
+            </div>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Характеристика
+                        </th>
+                        <th>Значение
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Размер скидки
+                        </td>
+                        <td>{% if discount.is_percent %}{{ discount.size }}%{% else %}${{ discount.size }}{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Начало скидки
+                        </td>
+                        <td>{{ discount.start_date|date:"d F Y" }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Окончание скидки
+                        </td>
+                        <td>{{ discount.end_date|date:"d F Y" }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Описание скидки
+                        </td>
+                        <td>{{ discount.description }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="Tabs-block" id="sellers">
+            <div class="Categories Categories_product">
+            </div>
+        </div>
+        <div class="Tabs-block" id="product">
+            <div class="Product-props">
+                <h2>
+                    <a href="{% url 'pages:product-detail' discount.product.pk %}">
+                        {{ discount.product.title }}
+                    </a>
+                </h2>
+                <div class="ProductCard-info">
+                    <div class="ProductCard-cost">
+                        <b><div>
+                            {% if discount %}
+                                Средняя цена без скидки:
+                                <del style="color: grey;">
+                                    ${{ average_price|floatformat:2 }}
+                                </del><br/>
+                                Средняя цена с учетом скидки: ${{ average_with_discount|floatformat:2 }}
+                            {% endif%}
+                        </div></b><span style="margin-left: 1px;">(скидка: {{ percentage_difference|floatformat:1 }} %)</span>
+                    </div>
+                </div><br/>
+                <div>
+                    <p><b>Описание:</b> {{ discount.product.description }}</p>
+                    {% if icon_url %}
+                        <a href="{% url 'pages:product-detail' discount.product.pk %}">
+                            <img class="pict pict_right" src="{{ icon_url }}" alt="{{ object.title }}" />
+                        </a>
+                    {% endif %}
+
+                    <div class="clearfix">
+                    </div>
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <th>Характеристика</th>
+                                <th>Значение</th>
+                            </tr>
+                            {% for key, value in discount.product.characters.items %}
+                            <tr>
+                                <td>{{ key }}</td>
+                                <td>{{ value }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <div class="ProductCard-footer">
+                    <div class="ProductCard-tags">
+                        <strong class="ProductCard-tagsTitle">Тэги:
+                        </strong>
+                        {% for tag in discount.product.tags.all %}
+                        <a href="{% url 'pages:catalog-view' %}?tag={{ tag.pk }}">{{ tag.title }}
+                        {% if not forloop.last %}, {% endif %}</a>{% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

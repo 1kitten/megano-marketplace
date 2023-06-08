@@ -1,0 +1,51 @@
+{% extends 'orders/order_base.html' %}
+{% load static %}
+
+{% block order_step %}
+    <form method="post" class="form">
+    {% csrf_token %}
+    {% if request.session.user_data.delivery_data %}
+        <div class="Order-block Order-block_OPEN" id="step3">
+            <header class="Section-header Section-header_sm">
+                <h2 class="Section-title">Шаг 3. Способ оплаты
+                </h2>
+            </header>
+            <div class="form-group">
+                {% if not request.session.user_data.payment_data %}
+                <div>
+                    <label class="toggle">
+                        <input type="radio" name="pay" value="{{ payment_type.0.title }}" checked="checked" /><span class="toggle-box"></span><span
+                            class="toggle-text">{{ payment_type.0.title }}</span>
+                    </label>
+                </div>
+                {% for payment in payment_type|slice:"1:" %}
+                <div>
+                    <label class="toggle">
+                        <input type="radio" name="pay" value="{{ payment.title }}" {% if request.session.user_data.payment_data.pay.0 == payment.title %} checked="checked" {% endif %}/><span
+                            class="toggle-box"></span><span class="toggle-text">{{ payment.title }}</span>
+                    </label>
+                </div>
+                {% endfor %}
+                {% else %}
+                {% for payment in payment_type %}
+                <div>
+                    <label class="toggle">
+                        <input type="radio" name="pay" value="{{ payment.title }}" {% if request.session.user_data.payment_data.pay.0 == payment.title %} checked="checked" {% endif %}/><span
+                            class="toggle-box"></span><span class="toggle-text">{{ payment.title }}</span>
+                    </label>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <div style="margin-bottom: 150px"></div>
+            </div>
+            <div class="Order-footer"><button class="btn btn_success" type="submit">Дальше</button>
+            </div>
+        </div>
+    {% else %}
+        <div align="center">
+            <h2 class="Section-title">Заполните информацию на <a href="{% url 'pages:order-step-2' %}">шаге 2</a>, пожалуйста!</h2>
+            <img src="{% static 'assets/img/content/home/bad_order.jpg' %}" alt="bad_order" style="max-width: 700px; width: 100%"/>
+        </div>
+    {% endif %}
+    </form>
+{% endblock %}

@@ -1,0 +1,136 @@
+{% load static %}
+{% load mptt_tags %}
+{% load category_tags %}
+        <div class="ControlPanel">
+            <div class="wrap">
+                <div class="row ControlPanel-row">
+                    <div class="row-block">
+                        <div class="row ControlPanel-rowSplit">
+                            <div class="row-block hide_700">
+                                <ul class="menu menu_img menu_smallImg ControlPanel-menu">
+                                    <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'assets/img/icons/socialHeader/tw.svg' %}" alt="tw.svg" /></a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'assets/img/icons/socialHeader/in.svg' %}" /></a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'assets/img/icons/socialHeader/pt.svg' %}" /></a>
+                                    </li>
+                                    <li class="menu-item"><a class="menu-link" href="#"><img src="{% static 'assets/img/icons/socialHeader/mail.svg' %}" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="row-block">
+                        <div class="row ControlPanel-rowSplit">
+                            <div class="row-block">
+                                {% if request.user.is_anonymous %}
+                                    <a class="ControlPanel-title" href="{% url 'app_users:login' %}">Вход</a>
+                                    <a class="ControlPanel-title" href="{% url 'app_users:register' %}">Регистрация</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!--+div.menuModal#navigate
+      //    +menu([
+      //        ['Главная','index.html'],
+      //        ['Портфолио','index.html'],
+      //        ['Мои проекты','index.html'],
+      //        ['Контакты','index.html']
+      //    ], page === 'article'? 'Портфолио': 'Главная')._main
+
+      block
+      -->
+        </div>
+        <div class="wrap">
+            <div class="row Header-rowMain">
+                <div class="row-block Header-logo"><a class="logo" href="{% url 'pages:index-page' %}"><img class="logo-image" src="{% static 'assets/img/logo.png' %}" alt="logo.png" /></a>
+                </div>
+                <nav class="row-block row-block_right Header-menu">
+                    <div class="menuModal" id="navigate">
+                        <ul class="menu menu_main">
+                            <li class="menu-item"><a class="menu-link" href="{% url 'pages:index-page' %}">Главная</a>
+                            </li>
+                            <li class="menu-item"><span class="menu-label menu-label_success">Скидки</span><a class="menu-link" href="{% url 'pages:catalog-view' %}">Каталог</a>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="{% url 'pages:all-discounts' %}">Предложения</a>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="{% url 'pages:discount_list' %}">Скидки</a>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="{% url 'pages:comparison' %}">Сравнение</a>
+                            </li>
+                            {% if request.user.is_staff %}
+                                <li class="menu-item"><a class="menu-link" href="{% url 'pages:import_page' %}">Импорты</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+                <div class="row-block">
+
+                    <div class="CartBlock">
+                        {% if not request.user.is_anonymous %}
+                        <div class="dropdown">
+                            <button class="dropbtn"><img class="CartBlock-img" src="{% static 'assets/img/icons/loon-icon.svg'%}" alt="loon-icon.svg" /></button>
+                            <div class="dropdown-content">
+                                <a class="dropdown-content-a" href="{% url "app_users:account" request.user.username %}">Личный кабинет</a>
+                                <a class="dropdown-content-a" href="/admin">Административный раздел</a>
+                                <a class="dropdown-content-a" href="/users/logout">Выход</a>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <a class="CartBlock-block" href="/cart"><img class="CartBlock-img" src="{% static 'assets/img/icons/cart.svg'%}" alt="cart.svg" /><span class="CartBlock-amount">{{cart.get_cart_item_quantity}}</span></a>
+                        <div class="CartBlock-block"><span class="CartBlock-price">{{ price_after_discount|floatformat:2 }}₽</span></div>
+                    </div>
+                </div>
+                <div class="row-block Header-trigger"><a class="menuTrigger" href="#navigate">
+                        <div class="menuTrigger-content">Показать навигацию
+                        </div><span></span><span></span><span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="Header-searchWrap">
+            <div class="wrap">
+                <div class="Header-categories">
+                    <div class="CategoriesButton">
+                        <div class="CategoriesButton-title">
+                            <div class="CategoriesButton-icon"><img src="{% static 'assets/img/icons/allDep.svg'%}" alt="allDep.svg" />
+                            </div><span class="CategoriesButton-text">Все категории</span>
+                            <div class="CategoriesButton-arrow">
+                            </div>
+                        </div>
+                        <div class="CategoriesButton-content">
+
+                      {% get_categories as categories %}
+                      {% recursetree categories %}
+                            <div class="CategoriesButton-link"><a href="{% url 'pages:catalog-view' %}?cat={{ node.slug }}">
+                                    <div class="CategoriesButton-icon"><img src="/{{ node.icon.file }}" alt="icon" />
+                                    </div><span class="CategoriesButton-text">{{ node.title }}</span>
+                                </a>
+                                {% if not node.is_leaf_node %}
+                                <a class="CategoriesButton-arrow" href="#"></a>
+                                <div class="CategoriesButton-submenu">
+                                    {{ children }}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                      {% endrecursetree %}
+                        </div>
+                    </div>
+                </div>
+                <div class="Header-searchLink"><img src="{% static 'assets/img/icons/search.svg'%}" alt="search.svg" />
+                </div>
+                <div class="Header-search">
+                    <div class="search">
+                        <form class="form form_search" action="{% url 'pages:catalog-view' %}" method="get">
+                            <input class="search-input" id="title" name="title" type="text" placeholder="NVIDIA GeForce RTX 3060" />
+                            <button class="search-button" type="submit" name="search" id="search"><img src="{% static 'assets/img/icons/search.svg'%}" />Поиск
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>

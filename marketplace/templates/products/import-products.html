@@ -1,0 +1,65 @@
+{% extends 'base_mini.html' %}
+{% load static %}
+
+{% block main %}
+    <style>
+    .Json-import-file {
+        width: 140px;
+        height: 50px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -70px;
+        margin-top: -50px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .Json-import-file:hover {
+        color: #1f7eff;
+    }
+
+    .Import-form-file-input {
+        opacity: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+    }
+
+    </style>
+
+    <div class="wrap">
+        <div class="wrapper">
+            {% if success == 'True' %}
+                <img src="{% static 'assets/img/content/home/success_imp.jpg' %}" style="max-width: 450px; width: 100%" alt="success">
+                <div class="Profile-success" style="text-align: center; font-size: 20px">
+                Успешный импорт!
+                </div>
+            {% elif success == 'False' %}
+                <div style="text-align: center; color: #f26d7d">
+                Не удалось импортировать все продукты.
+                Проверьте лог файл.
+                </div>
+            {% endif %}
+           <br>
+            <div class="header">
+                <h3 class="sign-in">Импорт продуктов</h3>
+            </div>
+            <div class="clear"></div>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <label class="Json-import-file" for="id_json_file">
+                    <img src="{% static  "assets/img/icons/upload.png" %}" alt="#.png">Выбрать файлы
+                </label>
+            <input type="submit" value="Загрузить">
+                <a href="{% static 'import_example.json' %}" download>
+                    <h5>Пример.json</h5>
+                </a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
