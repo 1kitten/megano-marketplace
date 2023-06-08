@@ -2404,7 +2404,7 @@
     "model": "app_merch.image",
     "pk": 4,
     "fields": {
-        "file": "static/assets/img/icons/Logitech_G_Pro_X_Superlight_Wireless_Black.jpg",
+        "file": "static/assets/img/icons/gpro.png",
         "title": "logitech"
     }
 },
