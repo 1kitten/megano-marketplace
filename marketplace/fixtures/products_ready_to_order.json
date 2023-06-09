@@ -2380,7 +2380,7 @@
     "model": "app_merch.image",
     "pk": 1,
     "fields": {
-        "file": "static/assets/img/icons/leopold_pink_xuaaeQW.jpg",
+        "file": "static/assets/img/icons/leopold_pink.jpg",
         "title": "leopold"
     }
 },
@@ -2388,7 +2388,7 @@
     "model": "app_merch.image",
     "pk": 2,
     "fields": {
-        "file": "static/assets/img/icons/Vortex_Tab_90_yhHxHFY.jpg",
+        "file": "static/assets/img/icons/Vortex_Tab_90.jpg",
         "title": "vortex"
     }
 },
