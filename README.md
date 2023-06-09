@@ -35,3 +35,9 @@ python manage.py runserver
 ```bash
 python manage.py loaddata fixtures/admin_interface_theme_megano.json
 ```
+
+---
+
+* docker-compose soon...
+* full readme.md
+* code refactoring
