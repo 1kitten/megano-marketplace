@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load product_discount_tags %}
 
 {% block content %}
         <div class="Header-slider">
@@ -118,8 +119,15 @@
                                 <strong class="Card-title"><a href="{% url 'pages:product-detail' product.pk %}">{{ product.title }}</a>
                                 </strong>
                                 <div class="Card-description">
-                                    <div class="Card-cost"><span class="Card-price">{{ product.min_price }}</span>
-                                    </div>
+                                    {% is_discounted product.pk as discount%}
+                                    {% if discount %}
+                                        <div class="Card-cost">
+                                            <span class="Card-price"><del style="color: #df3349">{% avg_price product.pk %}</del></span>
+                                            <span class="Card-price">{% avg_discount_price product.pk %}</span>
+                                        </div>
+                                    {% else %}
+                                        <div class="Card-cost"><span class="Card-price">{{ product.min_price }}</span></div>
+                                    {% endif %}
                                     <div class="Card-category">{{ product.category__title }}
                                     </div>
                                     <div class="Card-hover"><a class="Card-btn" href="{% url 'pages:product-detail' product.pk %}"><img src="{% static 'assets/img/icons/card/cart.svg' %}" alt="cart.svg" /></a><a class="Card-btn" href="{% url 'pages:add_to_comparison_list'%}?product={{ product.pk }}"><img src="{% static 'assets/img/icons/card/change.svg' %}" alt="change.svg" /></a>

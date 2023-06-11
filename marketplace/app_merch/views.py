@@ -46,7 +46,7 @@ class IndexView(ListView):
         semi_banners = Banner.objects.filter(is_active=True)[:3]
         popular_offers = Product.objects.filter(is_active=True, offers__is_active=True).values(
             "pk", "category__title", "icon__file", "title", "discounts"
-        ).annotate(min_price=Min("offers__price")).order_by("offers__total_views")[:8]
+        ).annotate(min_price=Min("offers__price")).order_by("-offers__total_views")[:8]
 
         context["banners"] = cache.get_or_set(
             "Banners",
@@ -67,25 +67,6 @@ class IndexView(ListView):
         )
 
         return context
-
-
-class CategoryView(ListView):
-    """Вью класс получения активных категорий товаров."""
-
-    template_name = "base.html"
-    context_object_name = "categories"
-
-    def get_queryset(self):
-        """Получаем доступные категории и кешируем их на 1 день."""
-        time_to_cache = SiteSettings.load().time_to_cache
-        if not time_to_cache:
-            time_to_cache = 1
-
-        return cache.get_or_set(
-            f"Categories",
-            Category.objects.filter(is_active=True),
-            time_to_cache * 60 * 60 * 24,
-        )
 
 
 class AllDiscountView(ListView):
@@ -339,6 +320,9 @@ class ProductDetailView(DetailView):
 
     def get(self, request, *args, **kwargs):
         watched_products_service.add_product(request=request, product=self.get_object())
+        offer = Offer.objects.filter(product_id=self.kwargs['pk']).first()
+        offer.total_views += 1
+        offer.save()
         return super(ProductDetailView, self).get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
