@@ -9,12 +9,11 @@ from app_settings.models import SiteSettings
 from app_users.models import DeliveryType, PaymentType, Seller, Order
 from django.core.cache import cache
 from django.db.models import Count, Max, Min, QuerySet
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import redirect, render
 import os
 from marketplace.settings import BASE_DIR
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, View, TemplateView
-from django.views.generic.edit import FormView
 from mptt.querysets import TreeQuerySet
 from . import review_service
 from .discount_service import DiscountService
@@ -45,6 +44,9 @@ class IndexView(ListView):
 
         banners = Banner.objects.filter(is_active=True).order_by('?')[:3]
         semi_banners = Banner.objects.filter(is_active=True)[:3]
+        popular_offers = Product.objects.filter(is_active=True, offers__is_active=True).values(
+            "pk", "category__title", "icon__file", "title", "discounts"
+        ).annotate(min_price=Min("offers__price")).order_by("offers__total_views")[:8]
 
         context["banners"] = cache.get_or_set(
             "Banners",
@@ -55,6 +57,12 @@ class IndexView(ListView):
         context["semi_banners"] = cache.get_or_set(
             "Semi_banners",
             semi_banners,
+            banners_cache_time * 60
+        )
+
+        context["popular_products"] = cache.get_or_set(
+            "Populars",
+            popular_offers,
             banners_cache_time * 60
         )
 
