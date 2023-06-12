@@ -77,7 +77,7 @@
                             <div class="Card-category">News / xbox
                             </div>
                           </div>
-                          <div class="CountDown" data-date="31.09.2020 03:59">
+                          <div class="CountDown" data-date="15.07.2023 07:11">
                             <div class="CountDown-block">
                               <div class="CountDown-wrap">
                                 <div class="CountDown-days">
@@ -122,7 +122,7 @@
                                     {% is_discounted product.pk as discount%}
                                     {% if discount %}
                                         <div class="Card-cost">
-                                            <span class="Card-price"><del style="color: #df3349">{% avg_price product.pk %}</del></span>
+                                            <span class="Card-priceOld">{% avg_price product.pk %}</span>
                                             <span class="Card-price">{% avg_discount_price product.pk %}</span>
                                         </div>
                                     {% else %}
@@ -145,7 +145,7 @@
                 <div class="Section-content">
                     <div class="Slider Slider_carousel">
                         <header class="Section-header Section-header_close">
-                            <h2 class="Section-title">Ограниченный тираж
+                            <h2 class="Section-title">Скоро закончатся
                             </h2>
                             <div class="Section-control">
                                 <div class="Slider-navigate">
@@ -153,150 +153,33 @@
                             </div>
                         </header>
                         <div class="Slider-box Cards">
-                            <div class="Slider-item">
+                            {% for product in limited_products %}
+                             <div class="Slider-item">
                                 <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="#"><img src="assets/img/content/home/card.jpg" alt="card.jpg" /></a>
+                                    <div class="Card"><a class="Card-picture" href="{% url 'pages:product-detail' product.pk %}"><img src="{{ product.icon__file }}" alt="card.jpg" /></a>
                                         <div class="Card-content">
-                                            <strong class="Card-title"><a href="#">Corsair Carbide Series Arctic White Steel</a>
+                                            <strong class="Card-title"><a href="{% url 'pages:product-detail' product.pk %}">{{ product.title }}</a>
                                             </strong>
                                             <div class="Card-description">
-                                                <div class="Card-cost"><span class="Card-price">$85.00</span>
+                                                {% is_discounted product.pk as discount%}
+                                                {% if discount %}
+                                                    <div class="Card-cost">
+                                                        <span class="Card-priceOld">{% avg_price product.pk %}</span>
+                                                        <span class="Card-price">{% avg_discount_price product.pk %}</span>
+                                                    </div>
+                                                {% else %}
+                                                    <div class="Card-cost"><span class="Card-price">{{ product.min_price }}</span></div>
+                                                {% endif %}
+                                                <div class="Card-category">{{ product.category__title }}
                                                 </div>
-                                                <div class="Card-category">Games / xbox
-                                                </div>
-                                                <div class="Card-hover"><a class="Card-btn" href="#"><img src="assets/img/icons/card/cart.svg" alt="cart.svg" /></a>
+                                                <div class="Card-hover"><a class="Card-btn" href="{% url 'pages:product-detail' product.pk %}"><img src="{% static 'assets/img/icons/card/cart.svg' %}" alt="cart.svg" /></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="Slider-item">
-                                <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="#"><img src="assets/img/content/home/card.jpg" alt="card.jpg" /></a>
-                                        <div class="Card-content">
-                                            <strong class="Card-title"><a href="#">Brand New Phone Smart Business</a>
-                                            </strong>
-                                            <div class="Card-description">
-                                                <div class="Card-cost"><span class="Card-price">$85.00</span>
-                                                </div>
-                                                <div class="Card-category">Games / xbox
-                                                </div>
-                                                <div class="Card-hover"><a class="Card-btn" href="#"><img src="assets/img/icons/card/cart.svg" alt="cart.svg" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Slider-item">
-                                <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="#"><img src="assets/img/content/home/card.jpg" alt="card.jpg" /></a>
-                                        <div class="Card-content">
-                                            <strong class="Card-title"><a href="#">Mavic PRO Mini Drones Hobby RC Quadcopter</a>
-                                            </strong>
-                                            <div class="Card-description">
-                                                <div class="Card-cost"><span class="Card-price">$185.00</span>
-                                                </div>
-                                                <div class="Card-category">Digital / xbox
-                                                </div>
-                                                <div class="Card-hover"><a class="Card-btn" href="#"><img src="assets/img/icons/card/cart.svg" alt="cart.svg" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Slider-item">
-                                <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="#"><img src="assets/img/content/home/card.jpg" alt="card.jpg" /></a>
-                                        <div class="Card-content">
-                                            <strong class="Card-title"><a href="#">Corsair Carbide Series Arctic White Steel</a>
-                                            </strong>
-                                            <div class="Card-description">
-                                                <div class="Card-cost"><span class="Card-price">$210.00</span>
-                                                </div>
-                                                <div class="Card-category">Media / xbox
-                                                </div>
-                                                <div class="Card-hover"><a class="Card-btn" href="#"><img src="assets/img/icons/card/cart.svg" alt="cart.svg" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Slider-item">
-                                <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="#"><img src="assets/img/content/home/card.jpg" alt="card.jpg" /></a>
-                                        <div class="Card-content">
-                                            <strong class="Card-title"><a href="#">Mavic PRO Mini Drones Hobby RC Quadcopter</a>
-                                            </strong>
-                                            <div class="Card-description">
-                                                <div class="Card-cost"><span class="Card-price">$185.00</span>
-                                                </div>
-                                                <div class="Card-category">Digital / xbox
-                                                </div>
-                                                <div class="Card-hover"><a class="Card-btn" href="#"><img src="assets/img/icons/card/cart.svg" alt="cart.svg" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Slider-item">
-                                <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="#"><img src="assets/img/content/home/card.jpg" alt="card.jpg" /></a>
-                                        <div class="Card-content">
-                                            <strong class="Card-title"><a href="#">Corsair Carbide Series Arctic White Steel</a>
-                                            </strong>
-                                            <div class="Card-description">
-                                                <div class="Card-cost"><span class="Card-price">$210.00</span>
-                                                </div>
-                                                <div class="Card-category">Media / xbox
-                                                </div>
-                                                <div class="Card-hover"><a class="Card-btn" href="#"><img src="assets/img/icons/card/cart.svg" alt="cart.svg" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Slider-item">
-                                <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="#"><img src="assets/img/content/home/card.jpg" alt="card.jpg" /></a>
-                                        <div class="Card-content">
-                                            <strong class="Card-title"><a href="#">Mavic PRO Mini Drones Hobby RC Quadcopter</a>
-                                            </strong>
-                                            <div class="Card-description">
-                                                <div class="Card-cost"><span class="Card-price">$185.00</span>
-                                                </div>
-                                                <div class="Card-category">Digital / xbox
-                                                </div>
-                                                <div class="Card-hover"><a class="Card-btn" href="#"><img src="assets/img/icons/card/cart.svg" alt="cart.svg" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Slider-item">
-                                <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="#"><img src="assets/img/content/home/card.jpg" alt="card.jpg" /></a>
-                                        <div class="Card-content">
-                                            <strong class="Card-title"><a href="#">Corsair Carbide Series Arctic White Steel</a>
-                                            </strong>
-                                            <div class="Card-description">
-                                                <div class="Card-cost"><span class="Card-price">$210.00</span>
-                                                </div>
-                                                <div class="Card-category">Media / xbox
-                                                </div>
-                                                <div class="Card-hover"><a class="Card-btn" href="#"><img src="assets/img/icons/card/cart.svg" alt="cart.svg" /></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

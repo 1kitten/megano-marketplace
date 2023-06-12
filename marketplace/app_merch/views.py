@@ -47,6 +47,23 @@ class IndexView(ListView):
         popular_offers = Product.objects.filter(is_active=True, offers__is_active=True).values(
             "pk", "category__title", "icon__file", "title", "discounts"
         ).annotate(min_price=Min("offers__price")).order_by("-offers__total_views")[:8]
+        limited_products = (Product
+                                .objects
+                                .filter(
+                                    is_active=True,
+                                    offers__is_active=True,
+                                    offers__quantity__lt=100
+                                )
+                                .values(
+                                    "pk",
+                                    "category__title",
+                                    "icon__file",
+                                    "title",
+                                    "discounts"
+                                )
+                                .annotate(min_price=Min("offers__price"))
+                                .order_by("-min_price")
+                            )
 
         context["banners"] = cache.get_or_set(
             "Banners",
@@ -63,6 +80,12 @@ class IndexView(ListView):
         context["popular_products"] = cache.get_or_set(
             "Populars",
             popular_offers,
+            banners_cache_time * 60
+        )
+
+        context["limited_products"] = cache.get_or_set(
+            "Limited",
+            limited_products,
             banners_cache_time * 60
         )
 
@@ -518,7 +541,6 @@ class DiscountListView(ListView):
         current_datetime = timezone.now()
         context["current_datetime"] = current_datetime
         products = Product.objects.filter(discounts__is_active=True).order_by('-discounts__is_priority')
-        # discount_service = DiscountService()
         product_info_list = []
         for product in products:
             icon_url = product.icon.file.url if product.icon else None
