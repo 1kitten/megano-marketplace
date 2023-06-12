@@ -38,21 +38,14 @@ class IndexView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data()
         banners_cache_time = SiteSettings.load().banners_cache_time
+        time_to_cache = SiteSettings.load().time_to_cache
 
-        if not banners_cache_time:
-            banners_cache_time = 10
-
-        banners = Banner.objects.filter(is_active=True).order_by('?')[:3]
-        semi_banners = Banner.objects.filter(is_active=True)[:3]
-        popular_offers = Product.objects.filter(is_active=True, offers__is_active=True).values(
-            "pk", "category__title", "icon__file", "title", "discounts"
-        ).annotate(min_price=Min("offers__price")).order_by("-offers__total_views")[:8]
-        limited_products = (Product
+        banners = Banner.objects.filter(is_active=True).order_by('?')[:6]
+        popular_products = (Product
                                 .objects
                                 .filter(
                                     is_active=True,
                                     offers__is_active=True,
-                                    offers__quantity__lt=100
                                 )
                                 .values(
                                     "pk",
@@ -63,31 +56,33 @@ class IndexView(ListView):
                                 )
                                 .annotate(min_price=Min("offers__price"))
                                 .order_by("-min_price")
-                            )
+                           )
+        limited_products = popular_products.filter(offers__quantity__lt=100)
 
-        context["banners"] = cache.get_or_set(
-            "Banners",
-            banners,
-            banners_cache_time * 60,
-        )
+        additional_context = {
+            "banners": cache.get_or_set(
+                "Banners",
+                banners[:3],
+                banners_cache_time * 60,
+            ),
+            "semi_banners": cache.get_or_set(
+                "Semi_banners",
+                banners[3:],
+                banners_cache_time * 60,
+            ),
+            "popular_products": cache.get_or_set(
+                "Populars",
+                popular_products[:8],
+                time_to_cache * 60 * 60 * 24,
+            ),
+            "limited_products": cache.get_or_set(
+                "Limited",
+                limited_products,
+                time_to_cache * 60 * 60 * 24
+            )
+        }
 
-        context["semi_banners"] = cache.get_or_set(
-            "Semi_banners",
-            semi_banners,
-            banners_cache_time * 60
-        )
-
-        context["popular_products"] = cache.get_or_set(
-            "Populars",
-            popular_offers,
-            banners_cache_time * 60
-        )
-
-        context["limited_products"] = cache.get_or_set(
-            "Limited",
-            limited_products,
-            banners_cache_time * 60
-        )
+        context.update(additional_context)
 
         return context
 
@@ -180,14 +175,15 @@ class CatalogView(ListView):
         Список кешируется на 1 день.
         """
 
+        time_to_cache: int = SiteSettings.load().time_to_cache
+        if not time_to_cache:
+            time_to_cache = 1
+
         if cache.get('products'):
             queryset = cache.get('products')
         else:
             queryset: QuerySet = Product.objects.filter(is_active=True, offers__is_active=True)
-
-        time_to_cache: int = SiteSettings.load().time_to_cache
-        if not time_to_cache:
-            time_to_cache = 1
+            cache.set('products', queryset, time_to_cache * 60 * 60 * 24)
 
         price_range: str = self.request.GET.get("price")
         title: str = self.request.GET.get("title")
@@ -244,7 +240,6 @@ class CatalogView(ListView):
             else:
                 queryset: QuerySet = queryset.order_by("offers__total_views")
 
-        cache.set('products', queryset, time_to_cache * 60 * 60 * 24)
         return queryset
 
     def get_context_data(self, *, object_list=None, **kwargs):
