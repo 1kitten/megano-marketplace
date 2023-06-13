@@ -1,5 +1,9 @@
 # MEGANO: Marketplace
 
+<div align="center">
+  <img src="marketplace/static/assets/img/logo_footer.png">
+</div>
+
 ## Запуск
 Чтобы запустить работу, нужно ввести следующие команды:
 
