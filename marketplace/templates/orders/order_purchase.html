@@ -77,10 +77,10 @@
                             </div>
                             {% if item.product.discounts %}
                             <div class="Cart-block Cart-block_price">
-                                <div class="Cart-price"><del style="color: #df3349">{{ item.price }}</del>
-                                </div>
-                                <div class="Cart-price">{% avg_discount_price item.product %}
-                                </div>
+                                <span class="Card-priceOld">{{ item.price }}
+                                </span>
+                                <span class="Cart-price">{% avg_discount_price item.product %}
+                                </span>
                             </div>
                             {% else %}
                             <div class="Cart-block Cart-block_price">

@@ -18,8 +18,8 @@
                     </strong>
                     <small>Отзывы: {{ product_info.review_count }}</small>
                     <div class="Card-description">
-                        <div class="Card-cost"><span class="Card-price"> <del style="color: red;">${{ product_info.average_price|floatformat:2 }} </del></span>
-                            <span class="Card-price"> ${{ product_info.average_with_discount|floatformat:2 }} </span></div>
+                        <div class="Card-cost"><span class="Card-priceOld">{{ product_info.average_price|floatformat:2 }}</span>
+                            <span class="Card-price">{{ product_info.average_with_discount|floatformat:2 }}</span></div>
                         <div class="Card-category">{{ product_info.product.category.title }}</div>
                         <div class="Card-hover"><a class="Card-btn" href="#"><img src="{% static 'assets/img/icons/card/cart.svg' %}" alt="cart.svg" /></a>
                         </div>

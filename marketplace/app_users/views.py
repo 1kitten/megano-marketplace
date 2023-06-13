@@ -1,34 +1,32 @@
-from app_basket.models import Cart, CartItem
-from app_merch.models import Offer
-from app_merch.viewed_products import watched_products_service
-from app_settings.models import SiteSettings
-from .forms import (AvatarUpdateForm, ProfileUpdateForm,
-                    UpdatePasswordForm, UserLoginForm,
-                    UserPasswordResetForm, UserRegisterForm,
-                    UserSetPasswordForm, UserUpdateForm)
-from app_users.models import Order, OrderItem, Seller
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.views import (LoginView, LogoutView,
                                        PasswordResetConfirmView,
                                        PasswordResetDoneView,
                                        PasswordResetView, PasswordResetCompleteView)
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.cache import cache
+from django.core.mail import send_mail
 from django.db.models import F, Min, Sum
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
-from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, DetailView, ListView
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.utils.encoding import force_bytes, force_text
-from django.contrib.auth.tokens import default_token_generator
-from django.core.mail import send_mail
 from django.template.loader import render_to_string
-from django.contrib.auth import views as auth_views
-from django.contrib import messages
-from sql_util.aggregates import SubquerySum
-from django.contrib.sites.shortcuts import get_current_site
+from django.urls import reverse_lazy, reverse
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
+from django.views.generic import CreateView, DetailView, ListView
+
+from app_basket.models import Cart, CartItem
+from app_merch.models import Offer
+from app_merch.viewed_products import watched_products_service
+from app_settings.models import SiteSettings
+from app_users.models import Order, OrderItem, Seller
+from .forms import (AvatarUpdateForm, ProfileUpdateForm,
+                    UpdatePasswordForm, UserLoginForm,
+                    UserPasswordResetForm, UserRegisterForm,
+                    UserSetPasswordForm, UserUpdateForm)
 from .models import Buyer, Profile
 
 
