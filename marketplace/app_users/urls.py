@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from django.contrib.auth import views as auth_views
 from .views import (AccountView, CustomLoginView, CustomLogoutView, CustomPasswordResetConfirmView,
                     CustomPasswordResetDoneView, CustomPasswordResetView,
                     CustomRegisterView, OrderDetailView, OrdersHistoryView,
