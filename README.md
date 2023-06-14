@@ -1,7 +1,7 @@
 # MEGANO: Marketplace
 
-<div align="center">
-  <img src="marketplace/static/assets/img/logo_footer.png">
+<div style="text-align: center">
+  <img src="marketplace/static/assets/img/logo_footer.png" alt="megano_logo">
 </div>
 
 ## Запуск
