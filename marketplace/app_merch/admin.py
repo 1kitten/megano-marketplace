@@ -8,7 +8,7 @@ from .models import (Banner, Category, Discount, Image, Offer, Product,
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-    """Регистрация модели картинок в админ панели."""
+    """ Регистрация модели картинок в админ-панели. """
 
     search_fields = ["title"]
     list_display = ["file", "title"]
@@ -16,53 +16,47 @@ class ImageAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(DjangoMpttAdmin):
-    """Регистрация модели категорий в админ панели."""
+    """ Регистрация модели категорий в админ-панели. """
 
     prepopulated_fields = {"slug": ("title",)}
 
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    search_fields = [
-        "title",
-    ]
-    list_display = [
-        "title",
-    ]
+    """ Регистрация модели тегов в админ-панели. """
+
+    search_fields = ["title"]
+    list_display = ["title"]
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    search_fields = [
-        "title",
-    ]
-    list_display = [
-        "title",
-        "category",
-    ]
+    """ Регистрация модели продуктов в админ-панели. """
+
+    search_fields = ["title"]
+    list_display = ["title", "category"]
 
 
 @admin.register(SetOfProducts)
 class SetOfProductsAdmin(admin.ModelAdmin):
-    search_fields = [
-        "name",
-    ]
-    list_display = [
-        "name", 'product_group'
-    ]
+    """ Регистрация модели набора продуктов в админ-панели. """
+
+    search_fields = ["name"]
+    list_display = ["name", 'product_group']
+
 
 @admin.register(ProductGroup)
 class ProductGroupAdmin(admin.ModelAdmin):
-    search_fields = [
-        "name",
-    ]
-    list_display = [
-        "name",
-    ]
+    """ Регистрация модели группы продуктов в админ-панели. """
+
+    search_fields = ["name"]
+    list_display = ["name"]
 
 
 @admin.register(Offer)
 class OfferAdmin(admin.ModelAdmin):
+    """ Регистрация модели предложений в админ-панели. """
+
     search_fields = [
         "seller",
         "product",
@@ -81,35 +75,50 @@ class OfferAdmin(admin.ModelAdmin):
 
 @admin.register(Discount)
 class DiscountAdmin(admin.ModelAdmin):
-    list_display = ["id", "product",  "start_date", "end_date", "short_description"]
-    list_filter = [
-        "end_date",
-    ]
+    """ Регистрация модели скидок в админ-панели. """
 
-    def short_description(self, obj):
-        if len(obj.description) > 20:
-            return f"{obj.description[:20]}..."
-        return obj.description
+    list_display = [
+        "id",
+        "product",
+        "start_date",
+        "end_date",
+        "short_description"
+    ]
+    list_filter = ["end_date"]
+
+    @staticmethod
+    def short_description(obj):
+        return truncatechars(obj.description, 20)
 
 
 @admin.register(SetDiscount)
 class SetDiscountAdmin(admin.ModelAdmin):
-    list_display = ["id", "set_of_products", 'size', "is_percent", 'start_date', "end_date", "is_active" ]
+    """ Регистрация модели набора скидок в админ-панели. """
+
     list_filter = ["is_active"]
+
 
 @admin.register(CartDiscount)
 class CartDiscountAdmin(admin.ModelAdmin):
-    list_display = ["id", "cart", 'min_order_sum', "min_quantity", "is_percent", "discount", 'start_date', "end_date", "description", "is_active" ]
+    """ Регистрация модели скидок для корзины в админ-панели. """
+
     list_filter = ["is_active"]
 
 
 @admin.register(Banner)
 class BannerAdmin(admin.ModelAdmin):
-    """Регистрация модели баннера в админ-панели."""
+    """ Регистрация модели баннера в админ-панели. """
 
-    list_display = ["title", "primary_text", "short_description", "is_active", "link"]
+    list_display = [
+        "title",
+        "primary_text",
+        "short_description",
+        "is_active",
+        "link"
+    ]
     list_filter = ["is_active"]
     search_fields = ["title", "description"]
 
-    def short_description(self, obj):
+    @staticmethod
+    def short_description(obj):
         return truncatechars(obj.description, 50)
