@@ -1,5 +1,3 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
 
 from .views import (AllDiscountView, CatalogView, DiscountDetailView,
@@ -27,4 +25,4 @@ urlpatterns = [
     path("add_to_comparison_list/", add_to_comparison_list, name='add_to_comparison_list'),
     path("remove_from_comparison_list/", remove_from_comparison_list, name='remove_from_comparison_list'),
     path("clear_comparison_list/", clear_comparison_list, name='clear_comparison_list'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

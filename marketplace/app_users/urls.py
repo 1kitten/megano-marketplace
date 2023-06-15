@@ -1,6 +1,5 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
+
 from .views import (AccountView, CustomLoginView, CustomLogoutView, CustomPasswordResetConfirmView,
                     CustomPasswordResetDoneView, CustomPasswordResetView,
                     CustomRegisterView, OrderDetailView, OrdersHistoryView,
@@ -28,4 +27,4 @@ urlpatterns = [
         ViewsHistoryView.as_view(),
         name="views_history",
     ),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
