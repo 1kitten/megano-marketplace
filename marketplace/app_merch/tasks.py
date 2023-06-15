@@ -1,8 +1,8 @@
 from typing import Union
 
+from app_merch.import_service import ImportProductsService
 from app_merch.payment_service import pay_for_the_order
 from marketplace.celery import app
-from app_merch.import_service import ImportProductsService
 
 
 @app.task

@@ -1,35 +1,34 @@
-from django.utils import timezone
+import os
 
-from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .comparison_service import comparison_service
-from .import_service import ImportProductsService
-from app_settings.models import SiteSettings
-from app_users.models import DeliveryType, PaymentType, Seller, Order
 from django.core.cache import cache
 from django.db.models import Count, Max, Min, QuerySet
 from django.shortcuts import redirect, render
-import os
-from marketplace.settings import BASE_DIR
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.views.generic import DetailView, ListView, View, TemplateView
 from mptt.querysets import TreeQuerySet
+
+from app_basket.cart import CartService
+from app_basket.models import Cart
+from app_settings.models import SiteSettings
+from app_users.models import DeliveryType, PaymentType, Seller, Order
+from marketplace.settings import BASE_DIR
 from . import review_service
+from .comparison_service import comparison_service
 from .discount_service import DiscountService
 from .forms import (OrderDeliveryDataForm, OrderUserDataForm,
                     ReviewForm, PaymentForm, ProductImportForm)
 from .models import Banner, Category, Discount, Offer, Product, Review, Tag
-from .viewed_products import watched_products_service
-from app_basket.cart import CartService
-from app_basket.models import Cart
 from .order_service import OrderCreation
 from .payment_service import is_active_orders
 from .tasks import send_request_to_payment_service, make_an_products_importation, send_log_file_to_email
+from .viewed_products import watched_products_service
 
 
 class IndexView(ListView):
-    """Вью класс для главной страницы MEGANO."""
+    """ Вью класс для главной страницы MEGANO. """
 
     template_name = "index.html"
     context_object_name = "products"
@@ -88,7 +87,7 @@ class IndexView(ListView):
 
 
 class AllDiscountView(ListView):
-    """View для получения всех активных скидок."""
+    """ View для получения всех активных скидок. """
 
     template_name = "products/all_product_discounts.html"
     context_object_name = "all_discounts"
@@ -141,25 +140,6 @@ class AllDiscountView(ListView):
         context["product_info_list"] = product_info_list
 
         return context
-
-
-class PriorityDiscountView(ListView):
-    """View для получения приоритетных скидок."""
-
-    template_name = "products/priorities_discounts.html"
-    context_object_name = "priorities_discounts"
-
-    def get_queryset(self):
-        """Получаем приоритетные скидки и кешируем их на 1 день."""
-        time_to_cache = SiteSettings.load().time_to_cache
-        if not time_to_cache:
-            time_to_cache = 1
-
-        return cache.get_or_set(
-            f"Priorities_discounts",
-            Product.objects.filter(discounts__is_priority=True),
-            time_to_cache * 60 * 60 * 24,
-        )
 
 
 class CatalogView(ListView):
@@ -398,7 +378,7 @@ class ProductDetailView(DetailView):
         return context
 
     def post(self, request, *args, **kwargs):
-        """логика для добавления отзыва к товару"""
+        """ Логика для добавления отзыва к товару """
         product = self.get_object()
         return review_service.new_review(request, product)
 

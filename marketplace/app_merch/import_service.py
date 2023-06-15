@@ -2,6 +2,7 @@ import json
 import logging
 import os
 import shutil
+from typing import Union
 
 from django.conf import settings
 from django.core.mail import EmailMessage
@@ -21,7 +22,7 @@ class ImportProductsService:
     """ Сервис позволяющий работать с импортом товаров. """
 
     @staticmethod
-    def read_data_from_file(filepath):
+    def read_data_from_file(filepath: str) -> Union[dict, bool]:
         """ Метод чтения данных из файла. Ожидается JSON. """
 
         try:
@@ -32,7 +33,7 @@ class ImportProductsService:
             logger.error(f'Could not read data from file: {filepath}. ERROR: {e}')
             return False
 
-    def parse_products(self, filepath):
+    def parse_products(self, filepath: str) -> bool:
         """ Метод парсинга и добавления новых товаров. """
 
         products_data = self.read_data_from_file(filepath=filepath)
@@ -61,7 +62,7 @@ class ImportProductsService:
 
         return False if failed else True
 
-    def import_products(self, filepath):
+    def import_products(self, filepath: str) -> bool:
         """ Метод запуска парсинга и переноса файла с данными. """
 
         if self.parse_products(filepath=filepath):
@@ -74,7 +75,7 @@ class ImportProductsService:
             return False
 
     @staticmethod
-    def move_file_to_completed_directory(filepath):
+    def move_file_to_completed_directory(filepath: str) -> bool:
         """ Метод переноса файла с данными в директорию с готовыми импортами. """
 
         try:
@@ -87,7 +88,7 @@ class ImportProductsService:
             return False
 
     @staticmethod
-    def send_log(dst_email: str):
+    def send_log(dst_email: str) -> bool:
         """ Метод отправки файла с логом на E-mail. """
 
         try:

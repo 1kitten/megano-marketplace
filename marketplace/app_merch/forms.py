@@ -3,10 +3,12 @@ import re
 from django import forms
 from django.core.validators import ValidationError
 
-from .models import Offer, Review
+from .models import Review
 
 
 class ReviewForm(forms.ModelForm):
+    """ Форма для добавления отзыва. """
+
     rating = forms.ChoiceField(
         choices=[('', '---')] + [(str(i), str(i)) for i in range(1, 6)],
         widget=forms.Select(attrs={"class": "rating"}),
@@ -23,7 +25,7 @@ class ReviewForm(forms.ModelForm):
 
 
 class OrderUserDataForm(forms.Form):
-    """Форма для первого шага оформления заказа."""
+    """ Форма для первого шага оформления заказа. """
 
     name = forms.CharField(
         required=True,
@@ -88,7 +90,7 @@ class OrderUserDataForm(forms.Form):
 
 
 class OrderDeliveryDataForm(forms.Form):
-    """Форма для второго шага оформления заказа."""
+    """ Форма для второго шага оформления заказа. """
 
     city = forms.CharField(max_length=100, required=True, widget=forms.TextInput(
         attrs={
@@ -149,11 +151,13 @@ class PaymentForm(forms.Form):
 
 
 class ProductImportForm(forms.Form):
-    """ Форма загрузки csv файла импорта товаров. """
+    """ Форма загрузки JSON файла для импорта товаров. """
 
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'placeholder': 'E-mail'}), label=''
     )
     json_file = forms.FileField(
-        label='', widget=forms.ClearableFileInput(attrs={"multiple": True, "class": "Import-form-file-input"})
+        label='', widget=forms.ClearableFileInput(
+            attrs={"multiple": True, "class": "Import-form-file-input"}
+        )
     )
