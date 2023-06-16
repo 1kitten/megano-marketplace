@@ -21,7 +21,7 @@
                                     </h2>
                                     <div class="ProductCard-look">
                                         <div class="ProductCard-photo">
-                                            <img src="/{% firstof product.icon.file 'assets/img/content/home/bigGoods.png' %}" alt="bigGoods.png" />
+                                            <img src="{% get_media_prefix %}{% firstof product.icon.file 'assets/img/content/home/bigGoods.png' %}" alt="bigGoods.png" />
                                         </div>
                                     </div>
                                     <div class="Tabs Tabs_default">
