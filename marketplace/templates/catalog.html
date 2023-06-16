@@ -122,7 +122,7 @@
                     </div>
                     <div class="Cards">
                         {% for product in products %}
-                        <div class="Card"><a class="Card-picture" href="{% url 'pages:product-detail' product.pk %}"><img src="/{% firstof product.icon__file 'static/assets/img/content/home/no-pic.png' %}" alt="card.jpg" /></a>
+                        <div class="Card"><a class="Card-picture" href="{% url 'pages:product-detail' product.pk %}"><img src="{% get_media_prefix %}{% firstof product.icon__file 'static/assets/img/content/home/no-pic.png' %}" alt="{{ product.title }}" /></a>
                             <div class="Card-content">
                                 <strong class="Card-title"><a href="{% url 'pages:product-detail' product.pk %}">{{ product.title }}</a>
                                 </strong>

@@ -11,7 +11,7 @@ from pydantic.error_wrappers import ValidationError
 class Image(models.Model):
     """Модель картинок."""
 
-    file = models.FileField(upload_to="static/assets/img/icons/", verbose_name="файл")
+    file = models.FileField(upload_to="images", verbose_name="файл")
     title = models.CharField(max_length=150, verbose_name="наименование")
 
     class Meta:

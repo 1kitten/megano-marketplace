@@ -10,7 +10,7 @@
                     {% for cartitem in cart_user %}
                     <div class="Cart-product">
                         <div class="Cart-block Cart-block_row">
-                            <div class="Cart-block Cart-block_pict"><a class="Cart-pict" href="#"><img class="Cart-img" src="/{% firstof cartitem.offer.product.icon.file 'static/assets/img/content/home/no-pic.png' %}" alt="bigGoods2.jpg" /></a>
+                            <div class="Cart-block Cart-block_pict"><a class="Cart-pict" href="#"><img class="Cart-img" src="{% get_media_prefix %}{% firstof cartitem.offer.product.icon.file 'static/assets/img/content/home/no-pic.png' %}" alt="bigGoods2.jpg" /></a>
                             </div>
                             <div class="Cart-block Cart-block_info"><a class="Cart-title" href="{% url 'pages:product-detail' cartitem.offer.product.pk %}">{{cartitem.offer.product.title}}</a>
                                 <div class="Cart-desc">{{cartitem.offer.product.description}}</div>

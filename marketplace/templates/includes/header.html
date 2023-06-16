@@ -106,7 +106,7 @@
                       {% get_categories as categories %}
                       {% recursetree categories %}
                             <div class="CategoriesButton-link"><a href="{% url 'pages:catalog-view' %}?cat={{ node.slug }}">
-                                    <div class="CategoriesButton-icon"><img src="/{{ node.icon.file }}" alt="icon" />
+                                    <div class="CategoriesButton-icon"><img src="{% get_media_prefix %}{{ node.icon.file }}" alt="icon" />
                                     </div><span class="CategoriesButton-text">{{ node.title }}</span>
                                 </a>
                                 {% if not node.is_leaf_node %}

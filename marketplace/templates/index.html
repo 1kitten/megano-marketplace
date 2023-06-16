@@ -22,7 +22,7 @@
                         </div>
                       </div>
                       <div class="row-block">
-                        <div class="Slider-img"><img src="/{% firstof banner.file.file 'static/assets/img/content/home/slider.png' %}" style="max-width: 650px" alt="bnr_img"/>
+                        <div class="Slider-img"><img src="{% get_media_prefix %}{% firstof banner.file.file 'static/assets/img/content/home/slider.png' %}" style="max-width: 650px" alt="bnr_img"/>
                         </div>
                       </div>
                     </div>
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="BannersHomeBlock-block">
-                                <div class="BannersHomeBlock-img"><img src="/{% firstof banner.file.file 'static/assets/img/content/home/videoca.png' %}" alt="videoca.png" />
+                                <div class="BannersHomeBlock-img"><img src="{% get_media_prefix %}{% firstof banner.file.file 'static/assets/img/content/home/videoca.png' %}" alt="videoca.png" />
                                 </div>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                     </header>
                     <div class="Cards">
                         {% for product in popular_products %}
-                        <div class="Card hide_md hide_1450"><a class="Card-picture" href="{% url 'pages:product-detail' product.pk %}"><img src="{{ product.icon__file }}" alt="{{ product.title }}" /></a>
+                        <div class="Card hide_md hide_1450"><a class="Card-picture" href="{% url 'pages:product-detail' product.pk %}"><img src="{% get_media_prefix %}{{ product.icon__file }}" alt="{{ product.title }}" /></a>
                             <div class="Card-content">
                                 <strong class="Card-title"><a href="{% url 'pages:product-detail' product.pk %}">{{ product.title }}</a>
                                 </strong>
@@ -156,7 +156,7 @@
                             {% for product in limited_products %}
                              <div class="Slider-item">
                                 <div class="Slider-content">
-                                    <div class="Card"><a class="Card-picture" href="{% url 'pages:product-detail' product.pk %}"><img src="{{ product.icon__file }}" alt="card.jpg" /></a>
+                                    <div class="Card"><a class="Card-picture" href="{% url 'pages:product-detail' product.pk %}"><img src="{% get_media_prefix %}{{ product.icon__file }}" alt="{{ product.title }}" /></a>
                                         <div class="Card-content">
                                             <strong class="Card-title"><a href="{% url 'pages:product-detail' product.pk %}">{{ product.title }}</a>
                                             </strong>
