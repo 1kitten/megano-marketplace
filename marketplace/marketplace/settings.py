@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "app_merch",
+    "app_merch.apps.AppMerchConfig",
     "app_users",
     "app_basket",
     "app_settings",

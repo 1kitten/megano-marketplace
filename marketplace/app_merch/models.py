@@ -1,11 +1,12 @@
-from django.utils import timezone
-from app_basket.models import Cart
 from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 from mptt.models import MPTTModel, TreeForeignKey
 from pydantic.error_wrappers import ValidationError
+
+from app_basket.models import Cart
 
 
 class Image(models.Model):
@@ -378,5 +379,3 @@ class WatchedProduct(models.Model):
 
     class Meta:
         ordering = ["view_date"]
-
-
